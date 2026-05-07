@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Hotjar -->
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3411850,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8BHP9P');</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Eliminate the fund collection and data management hassle from Rotary Event Registrations with our Online Payment Gateway service. CC/Debit/UPI/NEFT, real-time reports." />
+  <meta name="theme-color" content="#0D1B3E" />
+  <title>Payment Gateway &amp; Data Collection — Online Registration + One-Click Payments</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <style>
+    :root{
+      --rotary-blue:#17458F;--rotary-blue-dark:#0D1B3E;--rotary-blue-deep:#081229;
+      --rotary-gold:#F7A81B;--rotary-gold-bright:#FFC557;
+      --white:#FFFFFF;
+      --ink-900:#0B1220;--ink-700:#1E293B;--ink-500:#475569;--ink-400:#64748B;
+      --ink-300:#94A3B8;--ink-200:#CBD5E1;--ink-100:#E2E8F0;--ink-50:#F1F5F9;--ink-25:#F8FAFC;
+      --grad-hero:radial-gradient(1200px 600px at 70% 0%,rgba(247,168,27,.18),transparent 60%),radial-gradient(900px 500px at 0% 100%,rgba(23,69,143,.5),transparent 55%),linear-gradient(180deg,#0D1B3E 0%,#081229 100%);
+      --shadow-sm:0 1px 2px rgba(11,18,32,.06),0 1px 3px rgba(11,18,32,.05);
+      --shadow-md:0 6px 20px rgba(11,18,32,.08);
+      --shadow-lg:0 24px 60px rgba(11,18,32,.12);
+      --shadow-gold:0 14px 40px rgba(247,168,27,.35);
+      --r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:36px;
+      --container:1200px;
+      --t-fast:200ms cubic-bezier(.2,.8,.2,1);
+      --t-mid:400ms cubic-bezier(.2,.8,.2,1);
+      --t-slow:700ms cubic-bezier(.2,.8,.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    *::selection{background:var(--rotary-gold);color:var(--rotary-blue-dark)}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--ink-700);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink-900);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0}
+    p{margin:0}
+    button{font-family:inherit;cursor:pointer;border:0;background:none}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 24px;border-radius:100px;transition:transform var(--t-fast),box-shadow var(--t-fast),background var(--t-fast);position:relative;overflow:hidden;cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--rotary-gold);color:var(--rotary-blue-dark);box-shadow:var(--shadow-gold)}
+    .btn-primary:hover{background:var(--rotary-gold-bright);transform:translateY(-2px)}
+    .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transition:left var(--t-slow)}
+    .btn-primary:hover::before{left:130%}
+    .btn-secondary{background:var(--white);color:var(--rotary-blue-dark);border:1px solid var(--ink-100);box-shadow:var(--shadow-sm)}
+    .btn-secondary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--rotary-gold)}
+    .btn-ghost-light{background:rgba(255,255,255,.06);color:var(--white);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px)}
+    .btn-ghost-light:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);border-color:rgba(247,168,27,.55)}
+    .btn-arrow{transition:transform var(--t-fast)}
+    .btn:hover .btn-arrow{transform:translateX(4px)}
+    .btn-lg{padding:18px 32px;font-size:16px}
+
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:padding var(--t-mid),background var(--t-mid),box-shadow var(--t-mid)}
+    .nav.scrolled{padding:10px 0;background:rgba(13,27,62,.85);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .nav-brand{display:flex;align-items:center;gap:12px;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:18px}
+    .nav-brand .brand-mark{width:36px;height:36px;display:grid;place-items:center;background:var(--rotary-gold);color:var(--rotary-blue-dark);border-radius:10px;font-size:18px;box-shadow:0 6px 20px rgba(247,168,27,.4)}
+    .nav-brand small{display:block;font-weight:500;font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}
+    .nav-links a{color:rgba(255,255,255,.85);font-weight:500;font-size:14.5px;padding:8px 14px;border-radius:100px;transition:color var(--t-fast),background var(--t-fast)}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.08)}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .nav-cta .btn{padding:10px 18px;font-size:14px}
+    .nav-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;border-radius:10px;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+
+    .drawer{position:fixed;top:0;right:-100%;width:min(360px,86vw);height:100vh;background:var(--rotary-blue-deep);z-index:200;padding:80px 28px 28px;transition:right var(--t-mid);box-shadow:-20px 0 60px rgba(0,0,0,.4)}
+    .drawer.open{right:0}
+    .drawer .close-x{position:absolute;top:18px;right:18px;width:42px;height:42px;display:grid;place-items:center;color:var(--white);background:rgba(255,255,255,.06);border-radius:10px}
+    .drawer ul{list-style:none;padding:0;margin:0 0 18px}
+    .drawer li a{display:block;padding:14px 0;color:rgba(255,255,255,.92);font-weight:600;font-size:17px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .drawer-cta{margin-top:16px}
+    .drawer-cta .btn{width:100%}
+    .scrim{position:fixed;inset:0;background:rgba(8,18,41,.55);backdrop-filter:blur(4px);z-index:150;opacity:0;pointer-events:none;transition:opacity var(--t-mid)}
+    .scrim.show{opacity:1;pointer-events:auto}
+
+    /* HERO */
+    .hero{position:relative;background:var(--grad-hero);color:var(--white);overflow:hidden;padding:130px 0 130px;isolation:isolate}
+    .hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:0}
+    .hero-blob.b1{width:420px;height:420px;background:radial-gradient(circle,rgba(247,168,27,.55),transparent 65%);top:-160px;right:-120px;animation:floatBlob 14s ease-in-out infinite}
+    .hero-blob.b2{width:340px;height:340px;background:radial-gradient(circle,rgba(45,93,186,.55),transparent 65%);bottom:-120px;left:-100px;animation:floatBlob 18s ease-in-out infinite reverse}
+    @keyframes floatBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
+    .hero-wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:110px;z-index:2;pointer-events:none;display:block}
+    .hero-wave .wave-accent{fill:none;stroke:rgba(247,168,27,.35);stroke-width:1}
+    .hero-wave .wave-fill{fill:#FFFFFF}
+    .hero .container{position:relative;z-index:2}
+    .hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:50px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(247,168,27,.12);border:1px solid rgba(247,168,27,.3);border-radius:100px;color:var(--rotary-gold-bright);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .hero-eyebrow .pulse-dot{width:8px;height:8px;background:var(--rotary-gold);border-radius:50%;box-shadow:0 0 0 0 rgba(247,168,27,.6);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(247,168,27,.55)}70%{box-shadow:0 0 0 12px rgba(247,168,27,0)}100%{box-shadow:0 0 0 0 rgba(247,168,27,0)}}
+    .hero h1{color:var(--white);font-size:clamp(34px,4.5vw,56px);font-weight:800;letter-spacing:-.035em;margin:18px 0 18px;line-height:1.1}
+    .hero h1 .gold{background:linear-gradient(120deg,var(--rotary-gold-bright) 0%,var(--rotary-gold) 60%,#E58E00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+    .hero p.hero-sub{font-size:clamp(15px,1.1vw,17px);color:rgba(255,255,255,.78);max-width:580px;margin-bottom:26px;line-height:1.65}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .hero-bullets{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 22px;color:rgba(255,255,255,.85);font-size:14px;font-weight:500}
+    .hero-bullets span{display:inline-flex;align-items:center;gap:8px}
+    .hero-bullets i{width:20px;height:20px;border-radius:50%;background:rgba(16,185,129,.18);color:#34D399;display:inline-grid;place-items:center;font-size:10px}
+
+    /* BROWSER MOCKUP — FORM FILL */
+    .form-stage{position:relative;justify-self:end;width:100%;max-width:480px;perspective:1500px}
+    .browser-window{
+      background:#fff;
+      border:1px solid rgba(11,18,32,.06);
+      border-radius:18px;
+      box-shadow:0 50px 90px rgba(0,0,0,.45),0 0 0 1px rgba(247,168,27,.08),0 0 60px rgba(247,168,27,.1);
+      overflow:hidden;
+      transform:rotateY(-9deg) rotateX(6deg);
+      transition:transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+    .browser-window:hover{transform:rotateY(-4deg) rotateX(3deg)}
+    .browser-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#F8FAFC;border-bottom:1px solid var(--ink-100)}
+    .browser-bar .dot{width:11px;height:11px;border-radius:50%;background:var(--ink-200)}
+    .browser-bar .dot.r{background:#FF5F57}.browser-bar .dot.y{background:#FEBC2E}.browser-bar .dot.g{background:#28C840}
+    .browser-bar .url{flex:1;background:#fff;border:1px solid var(--ink-100);border-radius:8px;padding:5px 10px;font-size:11px;color:var(--ink-400);text-align:center}
+    .browser-bar .url i{color:#10B981;margin-right:6px}
+    .browser-body{position:relative;height:380px;background:#FAFBFD;overflow:hidden}
+    .scene{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;padding:18px}
+    .scene.is-active{opacity:1}
+
+    /* Scene 1: Registration form */
+    .form-mock h5{font-size:14px;color:var(--ink-900);margin-bottom:4px;font-weight:700}
+    .form-mock .small-meta{font-size:11px;color:var(--ink-400);margin-bottom:12px}
+    .form-row{margin-bottom:8px}
+    .form-row label{display:block;font-size:10px;color:var(--ink-400);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .form-row .field{height:30px;background:#fff;border:1px solid var(--ink-100);border-radius:7px;display:flex;align-items:center;padding:0 10px;font-size:11.5px;color:var(--ink-700);position:relative;overflow:hidden}
+    .form-row .field.filled{border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.04)}
+    .form-row .field .caret{display:inline-block;width:1px;height:13px;background:var(--rotary-gold);margin-left:1px;animation:blink 1s infinite}
+    @keyframes blink{50%{opacity:0}}
+    .form-row .field .checkmark{position:absolute;right:8px;color:#10B981;font-size:10px}
+    .form-options{display:flex;gap:6px;margin-top:6px}
+    .opt{flex:1;height:28px;border:1px solid var(--ink-100);border-radius:6px;display:grid;place-items:center;font-size:10.5px;font-weight:600;color:var(--ink-700);background:#fff;transition:all .3s}
+    .opt.active{border-color:var(--rotary-gold);background:rgba(247,168,27,.08);color:var(--rotary-blue);box-shadow:0 0 0 2px rgba(247,168,27,.15)}
+    .form-total{margin-top:10px;padding:10px;background:linear-gradient(135deg,rgba(247,168,27,.1),rgba(247,168,27,.02));border:1px dashed rgba(247,168,27,.3);border-radius:8px;display:flex;justify-content:space-between;align-items:center}
+    .form-total .lbl{font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+    .form-total .val{font-family:'Plus Jakarta Sans';font-weight:800;color:var(--rotary-blue-dark);font-size:18px}
+    .form-cta{margin-top:10px;background:var(--rotary-gold);color:var(--rotary-blue-dark);padding:9px;text-align:center;border-radius:8px;font-size:11.5px;font-weight:800;font-family:'Plus Jakarta Sans'}
+
+    /* Scene 2: Payment methods */
+    .pay-mock{padding:14px}
+    .pay-mock h5{font-size:14px;margin-bottom:2px;color:var(--ink-900)}
+    .pay-mock .small-meta{font-size:11px;color:var(--ink-400);margin-bottom:12px}
+    .pay-amount-big{text-align:center;padding:14px;background:linear-gradient(135deg,var(--rotary-blue),#2D5DBA);color:#fff;border-radius:12px;margin-bottom:12px}
+    .pay-amount-big .lbl{font-size:11px;opacity:.85;text-transform:uppercase;letter-spacing:.08em}
+    .pay-amount-big .val{font-family:'Plus Jakarta Sans';font-weight:800;font-size:30px;line-height:1;margin-top:4px}
+    .pay-row{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--ink-100);border-radius:8px;margin-bottom:6px;background:#fff;transition:all var(--t-fast)}
+    .pay-row.active{border-color:var(--rotary-gold);background:rgba(247,168,27,.06)}
+    .pay-row .ico{width:26px;height:26px;border-radius:6px;background:var(--ink-50);color:var(--rotary-blue);display:grid;place-items:center;font-size:12px;flex-shrink:0}
+    .pay-row.upi .ico{background:rgba(16,185,129,.12);color:#10B981}
+    .pay-row .meta{flex:1;font-size:11px;font-weight:600;color:var(--ink-900)}
+    .pay-row .meta small{display:block;color:var(--ink-400);font-weight:500;font-size:10px}
+
+    /* Scene 3: Receipt + Excel */
+    .recp-mock{padding:14px;text-align:center}
+    .recp-mock .check{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#10B981,#047857);display:inline-grid;place-items:center;color:#fff;font-size:22px;margin-bottom:8px;border:3px solid rgba(16,185,129,.25)}
+    .recp-mock h5{font-size:14px;color:var(--ink-900);margin-bottom:4px}
+    .recp-mock .small-meta{font-size:11px;color:var(--ink-400);margin-bottom:14px}
+    .excel-row{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--ink-100);border-radius:7px;padding:8px 10px;margin-bottom:6px;font-size:11px;text-align:left}
+    .excel-row.head{background:linear-gradient(135deg,#10B981,#047857);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase}
+    .excel-row .col{flex:1;color:var(--ink-700)}
+    .excel-row .col strong{font-family:'Plus Jakarta Sans'}
+    .excel-row.head .col{color:#fff}
+    .excel-row .badge{font-size:10px;padding:2px 8px;border-radius:100px;background:rgba(16,185,129,.12);color:#047857;font-weight:700}
+
+    .floating-card{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:14px;padding:12px 16px;color:var(--white);font-size:12.5px;font-weight:600;box-shadow:0 18px 40px rgba(0,0,0,.25);animation:floatY 6s ease-in-out infinite;display:flex;align-items:center;gap:10px;z-index:3}
+    .floating-card.fc-1{top:-10px;left:-50px;animation-delay:0s}
+    .floating-card.fc-2{bottom:30px;right:-50px;animation-delay:1.5s}
+    .floating-card .fc-icon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:rgba(247,168,27,.18);color:var(--rotary-gold-bright);font-size:13px}
+    .floating-card.fc-2 .fc-icon{background:rgba(16,185,129,.2);color:#34D399}
+    .floating-card .fc-meta small{display:block;color:rgba(255,255,255,.6);font-weight:500;font-size:10.5px;margin-top:1px}
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+    /* SECTION COMMON */
+    .section{padding:110px 0}
+    .section-head{text-align:center;max-width:780px;margin:0 auto 60px}
+    .section-eyebrow{display:inline-block;color:var(--rotary-blue);background:rgba(23,69,143,.08);border:1px solid rgba(23,69,143,.15);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+    .section-title{font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-.025em}
+    .section-title .gold{background:linear-gradient(135deg,var(--rotary-gold),#E58E00);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .section-sub{color:var(--ink-500);font-size:17px;margin-top:16px;line-height:1.65}
+
+    /* TWO-COLUMN PRODUCT BLOCKS */
+    .prod-block{background:var(--ink-25);position:relative;overflow:hidden}
+    .prod-block.alt{background:var(--white)}
+    .prod-block .container{position:relative;z-index:1}
+    .prod-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+    .prod-block.alt .prod-grid{grid-template-columns:1fr 1.2fr}
+    .prod-list{list-style:none;padding:0;margin:0}
+    .prod-list li{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px dashed var(--ink-100);color:var(--ink-700);font-size:15.5px;line-height:1.55}
+    .prod-list li:last-child{border-bottom:none}
+    .prod-list li i{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,rgba(247,168,27,.18),rgba(247,168,27,.04));color:var(--rotary-gold);display:grid;place-items:center;font-size:13px;border:1px solid rgba(247,168,27,.22);margin-top:2px}
+    .prod-visual{position:relative}
+    .prod-visual .img-card{background:var(--white);border-radius:var(--r-2xl);padding:32px;border:1px solid var(--ink-100);box-shadow:var(--shadow-md)}
+
+    /* PG hero illustration */
+    .pg-illus{padding:24px;border-radius:var(--r-xl);background:linear-gradient(135deg,rgba(23,69,143,.06),rgba(247,168,27,.04));border:1px solid var(--ink-100);position:relative;overflow:hidden}
+    .pg-illus::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(247,168,27,.18),transparent 60%);pointer-events:none}
+    .pg-illus h4{color:var(--ink-900);font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .pg-illus h4 .ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);display:grid;place-items:center;font-size:16px;box-shadow:var(--shadow-gold)}
+    .method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:1}
+    .method{background:#fff;border:1px solid var(--ink-100);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid)}
+    .method:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--rotary-gold)}
+    .method .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:16px;flex-shrink:0}
+    .method.upi .ic{background:rgba(16,185,129,.12);color:#10B981}
+    .method.card .ic{background:rgba(23,69,143,.1);color:var(--rotary-blue)}
+    .method.netb .ic{background:rgba(139,92,246,.12);color:#7C3AED}
+    .method.wallet .ic{background:rgba(247,168,27,.14);color:var(--rotary-gold)}
+    .method .meta{font-size:13px;font-weight:700;color:var(--ink-900);font-family:'Plus Jakarta Sans'}
+    .method .meta small{display:block;color:var(--ink-400);font-weight:500;font-size:11.5px;letter-spacing:.04em;margin-top:2px;font-family:'Inter'}
+
+    /* Data form illustration */
+    .data-illus{background:var(--white);border-radius:var(--r-xl);padding:24px;border:1px solid var(--ink-100);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+    .data-illus::after{content:'';position:absolute;bottom:-30px;left:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(23,69,143,.1),transparent 60%);pointer-events:none}
+    .data-illus h4{color:var(--ink-900);font-size:16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+    .data-illus h4 .live{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#10B981;background:rgba(16,185,129,.1);padding:4px 10px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase}
+    .data-illus h4 .live::before{content:'';width:8px;height:8px;border-radius:50%;background:#10B981;animation:pulse 2s infinite}
+    .data-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:1}
+    .data-fields .f{background:var(--ink-25);border:1px solid var(--ink-100);border-radius:8px;padding:9px 10px}
+    .data-fields .f .l{font-size:9.5px;font-weight:700;color:var(--ink-400);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+    .data-fields .f .v{font-size:12px;font-weight:600;color:var(--ink-900);font-family:'Plus Jakarta Sans'}
+    .data-fields .f.full{grid-column:span 2}
+    .data-fields .f.tot{background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(16,185,129,.04));border-color:rgba(16,185,129,.3)}
+    .data-fields .f.tot .v{color:#047857;font-size:18px}
+
+    /* PRICING TIERS */
+    .pricing-section{background:linear-gradient(180deg,var(--ink-25),var(--white));position:relative;overflow:hidden}
+    .pricing-section::before{content:'';position:absolute;top:30%;left:50%;width:900px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(247,168,27,.08),transparent 60%);transform:translateX(-50%);pointer-events:none;filter:blur(40px)}
+    .pricing-section .container{position:relative;z-index:1}
+    .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+    .price-card{background:var(--white);border:2px solid var(--ink-100);border-radius:var(--r-2xl);padding:40px 34px;text-align:center;position:relative;overflow:hidden;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid)}
+    .price-card:hover{transform:translateY(-6px);border-color:var(--rotary-gold);box-shadow:0 30px 70px rgba(247,168,27,.18)}
+    .price-card.featured{border-color:rgba(247,168,27,.5);box-shadow:0 22px 50px rgba(247,168,27,.18)}
+    .price-card.featured::after{content:'KYC INCLUDED';position:absolute;top:18px;right:-32px;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);font-family:'Plus Jakarta Sans';font-weight:800;font-size:10.5px;letter-spacing:.1em;padding:5px 36px;transform:rotate(35deg);box-shadow:0 4px 10px rgba(247,168,27,.35)}
+    .price-card h3{font-size:18px;margin-bottom:6px}
+    .price-card .desc{color:var(--ink-500);font-size:13.5px;margin-bottom:18px}
+    .price-amount{display:flex;align-items:baseline;justify-content:center;gap:4px;margin:14px 0 4px}
+    .price-amount .currency{font-family:'Plus Jakarta Sans';font-size:18px;color:var(--ink-500);font-weight:600}
+    .price-amount .price{font-family:'Plus Jakarta Sans';font-size:54px;font-weight:800;color:var(--rotary-blue-dark);letter-spacing:-.03em;line-height:1}
+    .price-meta{color:var(--ink-400);font-size:12.5px;margin-bottom:24px}
+    .price-cta .btn{width:100%}
+
+    .price-pointers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:980px;margin:60px auto 0}
+    .price-pointer{background:var(--white);border:1px solid var(--ink-100);border-radius:var(--r-xl);padding:28px 24px;text-align:center;transition:transform var(--t-mid),border-color var(--t-mid)}
+    .price-pointer:hover{transform:translateY(-4px);border-color:rgba(247,168,27,.4)}
+    .price-pointer .pp-icon{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--rotary-blue),#2D5DBA);color:#fff;display:grid;place-items:center;font-size:18px;margin:0 auto 14px;box-shadow:0 8px 20px rgba(23,69,143,.3)}
+    .price-pointer h4{font-size:15px;color:var(--ink-900);line-height:1.4}
+
+    /* TIMELINE */
+    .timeline-section{background:var(--rotary-blue-dark);color:#fff;position:relative;overflow:hidden}
+    .timeline-section::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 350px at 10% 0%,rgba(247,168,27,.18),transparent 60%),radial-gradient(600px 300px at 95% 100%,rgba(45,93,186,.45),transparent 55%);pointer-events:none}
+    .timeline-section .container{position:relative;z-index:1}
+    .timeline-section .section-eyebrow{color:var(--rotary-gold-bright);background:rgba(247,168,27,.1);border-color:rgba(247,168,27,.25)}
+    .timeline-section .section-title{color:#fff}
+    .timeline-section .section-sub{color:rgba(255,255,255,.7)}
+    .timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:880px;margin:0 auto}
+    .tl-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);border-radius:var(--r-xl);padding:30px;display:flex;align-items:center;gap:20px;transition:transform var(--t-mid),border-color var(--t-mid)}
+    .tl-card:hover{transform:translateY(-4px);border-color:rgba(247,168,27,.4)}
+    .tl-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);display:grid;place-items:center;font-size:24px;flex-shrink:0;box-shadow:var(--shadow-gold)}
+    .tl-card h4{color:#fff;font-size:16px;margin-bottom:4px;font-weight:700}
+    .tl-card p{color:rgba(255,255,255,.65);font-size:13.5px;line-height:1.5}
+    .tl-card .duration{display:inline-block;margin-top:6px;color:var(--rotary-gold-bright);font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px}
+
+    /* KYC DOCS */
+    .kyc{background:var(--ink-25)}
+    .kyc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:980px;margin:0 auto}
+    .kyc-card{background:var(--white);border:1px solid var(--ink-100);border-radius:var(--r-xl);padding:32px;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid)}
+    .kyc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(247,168,27,.4)}
+    .kyc-card-head{display:flex;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px dashed var(--ink-100)}
+    .kyc-card-head .ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,rgba(247,168,27,.16),rgba(247,168,27,.04));color:var(--rotary-gold);display:grid;place-items:center;font-size:20px;border:1px solid rgba(247,168,27,.22)}
+    .kyc-card-head h4{font-size:18px;color:var(--ink-900);margin-bottom:2px}
+    .kyc-card-head small{color:var(--ink-400);font-size:12px;font-weight:500}
+    .kyc-card ul{list-style:none;padding:0;margin:0}
+    .kyc-card li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;color:var(--ink-700);font-size:14px;line-height:1.5}
+    .kyc-card li i{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:rgba(16,185,129,.12);color:#047857;display:grid;place-items:center;font-size:9px;margin-top:4px}
+
+    /* CTA */
+    .cta-final{padding:120px 0}
+    .cta-card{background:linear-gradient(135deg,#17458F 0%,#0D1B3E 100%);border-radius:var(--r-2xl);padding:70px 50px;text-align:center;color:var(--white);position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+    .cta-card::before,.cta-card::after{content:'';position:absolute;width:360px;height:360px;border-radius:50%;filter:blur(60px);pointer-events:none}
+    .cta-card::before{background:rgba(247,168,27,.35);top:-120px;right:-80px}
+    .cta-card::after{background:rgba(45,93,186,.45);bottom:-120px;left:-80px}
+    .cta-card>*{position:relative;z-index:1}
+    .cta-card h2{color:#fff;font-size:clamp(30px,4vw,46px);max-width:760px;margin:16px auto 18px}
+    .cta-card p{color:rgba(255,255,255,.78);font-size:18px;max-width:600px;margin:0 auto 30px}
+    .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* BRAND LOGO */
+    .nav-brand{display:flex;align-items:center;text-decoration:none;gap:0}
+    .nav-logo{height:46px;width:auto;display:block;transition:height var(--t-mid)}
+    .nav.scrolled .nav-logo{height:38px}
+
+    /* FOOTER (minimal) */
+    footer.site-footer{background:var(--rotary-blue-deep);color:rgba(255,255,255,.7);padding:60px 0 26px}
+    .footer-contact{text-align:center;margin-bottom:36px}
+    .footer-contact h3{color:var(--white);font-size:clamp(20px,2.4vw,26px);margin-bottom:6px;font-weight:700;letter-spacing:-.01em}
+    .footer-contact .lead{color:rgba(255,255,255,.6);font-size:14.5px;margin:0 auto 28px;max-width:520px}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto}
+    .contact-card{display:flex;align-items:center;gap:14px;padding:20px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;text-align:left;transition:transform var(--t-mid),background var(--t-mid),border-color var(--t-mid);text-decoration:none;color:inherit}
+    .contact-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07);border-color:rgba(247,168,27,.35)}
+    .contact-card .ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);display:grid;place-items:center;font-size:18px;flex-shrink:0;box-shadow:0 6px 16px rgba(247,168,27,.3)}
+    .contact-card small{display:block;color:rgba(255,255,255,.55);font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:3px}
+    .contact-card strong{color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;display:block;line-height:1.4}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:13px;color:rgba(255,255,255,.55)}
+    @media (max-width:768px){.contact-grid{grid-template-columns:1fr;gap:12px}}
+
+    /* Sticky quote button */
+    .sticky-quote{position:fixed;right:20px;bottom:20px;z-index:90}
+    .sticky-quote .btn{box-shadow:0 16px 40px rgba(247,168,27,.45)}
+
+    .reveal{opacity:0;transform:translateY(40px)}
+
+    @media (max-width:1024px){
+      .hero-grid{grid-template-columns:1fr;gap:60px}
+      .form-stage{justify-self:center;max-width:440px}
+      .browser-window{transform:none}
+      .prod-grid,.prod-block.alt .prod-grid{grid-template-columns:1fr;gap:40px}
+      .price-grid{grid-template-columns:1fr;max-width:520px}
+      .price-pointers{grid-template-columns:1fr;max-width:520px}
+      .timeline-grid{grid-template-columns:1fr}
+      .kyc-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1.2fr 1fr 1fr}
+      .footer-grid .footer-col:last-child{grid-column:span 3}
+    }
+    @media (max-width:768px){
+      .nav-links,.nav-cta .btn{display:none}
+      .nav-toggle{display:flex}
+      .hero{padding:120px 0 110px}
+      .section{padding:80px 0}
+      .cta-card{padding:50px 24px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-grid .footer-col:last-child{grid-column:span 1}
+      .floating-card{display:none}
+      .sticky-quote{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .floating-card,.pulse-dot,.hero-blob{animation:none!important}
+      *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BHP9P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ======= NAV ======= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="img/RILOGOw.png" alt="Rizones 4567" class="nav-logo" />
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="dynamic-website.html">Dynamic Website</a></li>
+          <li><a href="member-due-collection.html">Membership Dues</a></li>
+          <li><a href="pg-data-collection.html" class="active">Payment Gateway</a></li>
+          <li><a href="mass-whatsapp.html">WhatsApp</a></li>
+          <li><a href="mass-email.html">Email</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right btn-arrow"></i></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <button class="close-x" id="drawerClose"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dynamic-website.html">Dynamic Website</a></li>
+      <li><a href="member-due-collection.html">Membership Dues</a></li>
+      <li><a href="pg-data-collection.html">Payment Gateway</a></li>
+      <li><a href="mass-whatsapp.html">Mass WhatsApp</a></li>
+      <li><a href="mass-email.html">Mass Email</a></li>
+    </ul>
+    <div class="drawer-cta"><a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right"></i></a></div>
+  </aside>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <svg class="hero-wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wave-accent" d="M0,55 C360,105 1080,105 1440,55"/>
+      <path class="wave-fill" d="M0,60 C360,110 1080,110 1440,60 L1440,110 L0,110 Z"/>
+    </svg>
+
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="pulse-dot"></span>Payment Gateway &amp; Data Collection</span>
+        <h1 id="heroH1">
+          Eliminate the Fund Collection &amp; Data Management hassle from Rotary Event Registrations with our <span class="gold">Online Payment Gateway</span> service.
+        </h1>
+        <p class="hero-sub" id="heroSub">
+          A registration form linked to a secure payment gateway — accept Credit Card, Debit Card, Wallets, NEFT &amp; UPI. No manual reconciliation, no suspense accounts. Auto-receipts to email &amp; WhatsApp.
+        </p>
+        <div class="hero-actions" id="heroCTA">
+          <a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right btn-arrow"></i></a>
+          <a href="#features-pg" class="btn btn-ghost-light"><i class="fas fa-chevron-down"></i> Know More</a>
+        </div>
+        <div class="hero-bullets">
+          <span><i class="fas fa-check"></i> CC / Debit / UPI / NEFT</span>
+          <span><i class="fas fa-check"></i> Auto Receipts</span>
+          <span><i class="fas fa-check"></i> Real-Time Reports</span>
+        </div>
+      </div>
+
+      <div class="form-stage">
+        <div class="floating-card fc-1">
+          <span class="fc-icon"><i class="fas fa-keyboard"></i></span>
+          <span class="fc-meta">Form auto-fill<small>Smart calculations</small></span>
+        </div>
+        <div class="floating-card fc-2">
+          <span class="fc-icon"><i class="fas fa-file-excel"></i></span>
+          <span class="fc-meta">Live Excel sync<small>Real-time tracking</small></span>
+        </div>
+
+        <div class="browser-window">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <div class="url"><i class="fas fa-lock"></i>register.rotaryindia.org/event</div>
+          </div>
+          <div class="browser-body">
+
+            <!-- Scene 1: Form filling -->
+            <div class="scene scene-1 is-active form-mock" id="scene1">
+              <h5>Annual Conclave 2026 — Registration</h5>
+              <div class="small-meta">RC of Excellence · 14 May 2026</div>
+              <div class="form-row">
+                <label>Full Name *</label>
+                <div class="field filled" id="fName">Anil Sharma <span class="checkmark"><i class="fas fa-check"></i></span></div>
+              </div>
+              <div class="form-row">
+                <label>Mobile *</label>
+                <div class="field filled" id="fMob">+91 98765 43210 <span class="checkmark"><i class="fas fa-check"></i></span></div>
+              </div>
+              <div class="form-row">
+                <label>Club Name *</label>
+                <div class="field filled" id="fClub">RC Thane Hills <span class="checkmark"><i class="fas fa-check"></i></span></div>
+              </div>
+              <div class="form-row">
+                <label>T-Shirt Size</label>
+                <div class="form-options">
+                  <div class="opt">S</div>
+                  <div class="opt">M</div>
+                  <div class="opt active">L</div>
+                  <div class="opt">XL</div>
+                  <div class="opt">XXL</div>
+                </div>
+              </div>
+              <div class="form-total">
+                <span class="lbl">Auto-calculated total</span>
+                <span class="val">₹ 2,500</span>
+              </div>
+              <div class="form-cta">CONTINUE TO PAYMENT <i class="fas fa-arrow-right" style="margin-left:6px"></i></div>
+            </div>
+
+            <!-- Scene 2: Payment methods -->
+            <div class="scene scene-2 pay-mock" id="scene2">
+              <h5>Choose Payment Method</h5>
+              <div class="small-meta">Secured by Razorpay · 256-bit SSL</div>
+              <div class="pay-amount-big">
+                <div class="lbl">Total Payable</div>
+                <div class="val">₹ 2,500</div>
+              </div>
+              <div class="pay-row upi active">
+                <span class="ico"><i class="fas fa-mobile-alt"></i></span>
+                <span class="meta">UPI<small>GPay · PhonePe · Paytm</small></span>
+              </div>
+              <div class="pay-row">
+                <span class="ico"><i class="fas fa-credit-card"></i></span>
+                <span class="meta">Credit / Debit Card<small>Visa · Mastercard · Rupay</small></span>
+              </div>
+              <div class="pay-row">
+                <span class="ico"><i class="fas fa-university"></i></span>
+                <span class="meta">Net Banking<small>NEFT · IMPS · All major banks</small></span>
+              </div>
+              <div class="pay-row">
+                <span class="ico"><i class="fas fa-wallet"></i></span>
+                <span class="meta">Wallets<small>Paytm · Mobikwik · Freecharge</small></span>
+              </div>
+            </div>
+
+            <!-- Scene 3: Receipt + Excel sync -->
+            <div class="scene scene-3 recp-mock" id="scene3">
+              <div class="check"><i class="fas fa-check"></i></div>
+              <h5>Payment Successful!</h5>
+              <div class="small-meta">Receipt sent · Excel updated · WhatsApp delivered</div>
+              <div class="excel-row head">
+                <div class="col">Name</div>
+                <div class="col" style="flex:.7">Amt</div>
+                <div class="col" style="flex:.6">Status</div>
+              </div>
+              <div class="excel-row">
+                <div class="col"><strong>Anil Sharma</strong><br/><small style="color:var(--ink-400)">RC Thane Hills</small></div>
+                <div class="col" style="flex:.7"><strong>₹ 2,500</strong></div>
+                <div class="col" style="flex:.6"><span class="badge">PAID</span></div>
+              </div>
+              <div class="excel-row">
+                <div class="col"><strong>Sunita Iyer</strong><br/><small style="color:var(--ink-400)">RC Madras</small></div>
+                <div class="col" style="flex:.7"><strong>₹ 2,500</strong></div>
+                <div class="col" style="flex:.6"><span class="badge">PAID</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BENEFITS OF PAYMENT GATEWAY ======= -->
+  <section class="section prod-block" id="features-pg">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Benefits of Payment Gateway</span>
+        <h2 class="section-title">One link. <span class="gold">Every payment method.</span></h2>
+        <p class="section-sub">Share a single secure link on your club website, WhatsApp and email — and let participants pay how they prefer.</p>
+      </div>
+      <div class="prod-grid">
+        <div>
+          <ul class="prod-list">
+            <li><i class="fas fa-check"></i> Eliminate the hassle of fund collection and manual data management for Rotary Event registrations.</li>
+            <li><i class="fas fa-check"></i> Manage payment collection for any scale of events.</li>
+            <li><i class="fas fa-check"></i> Accept payments through Credit Cards, Debit Cards, Wallets, NEFT &amp; UPI.</li>
+            <li><i class="fas fa-check"></i> Smooth and secure user experience for participants.</li>
+            <li><i class="fas fa-check"></i> No manual bank reconciliation or suspense accounts.</li>
+            <li><i class="fas fa-check"></i> Share the payment link easily on your club website, WhatsApp, and email for wider reach.</li>
+          </ul>
+        </div>
+        <div class="prod-visual">
+          <div class="pg-illus">
+            <h4><span class="ic"><i class="fas fa-bolt"></i></span> Accepted methods</h4>
+            <div class="method-grid">
+              <div class="method upi">
+                <div class="ic"><i class="fas fa-mobile-alt"></i></div>
+                <div class="meta">UPI<small>GPay · PhonePe · Paytm</small></div>
+              </div>
+              <div class="method card">
+                <div class="ic"><i class="fas fa-credit-card"></i></div>
+                <div class="meta">Card<small>Credit · Debit · RuPay</small></div>
+              </div>
+              <div class="method netb">
+                <div class="ic"><i class="fas fa-university"></i></div>
+                <div class="meta">NEFT / IMPS<small>All major banks</small></div>
+              </div>
+              <div class="method wallet">
+                <div class="ic"><i class="fas fa-wallet"></i></div>
+                <div class="meta">Wallet<small>Paytm · Mobikwik</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BENEFITS OF DATA COLLECTION FORM ======= -->
+  <section class="section prod-block alt" id="features-data">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Benefits of Data Collection Form</span>
+        <h2 class="section-title">A form that <span class="gold">does the math</span> for you.</h2>
+        <p class="section-sub">Capture exactly the details you need, auto-calculate totals, and have it all sync to a Google Sheet in real-time.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-visual">
+          <div class="data-illus">
+            <h4>Live Submission <span class="live">Real-time</span></h4>
+            <div class="data-fields">
+              <div class="f"><div class="l">Name</div><div class="v">Anil Sharma</div></div>
+              <div class="f"><div class="l">Mobile</div><div class="v">+91 98765 43210</div></div>
+              <div class="f full"><div class="l">Email</div><div class="v">anil@rcthanehills.org</div></div>
+              <div class="f"><div class="l">Club</div><div class="v">RC Thane Hills</div></div>
+              <div class="f"><div class="l">T-Shirt</div><div class="v">L</div></div>
+              <div class="f full"><div class="l">Food Preference</div><div class="v">Veg · No nuts</div></div>
+              <div class="f tot full"><div class="l">Auto-Calculated Total</div><div class="v">₹ 2,500</div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul class="prod-list">
+            <li><i class="fas fa-check"></i> Capture mandatory participant details (Name, Mobile, Email ID, Club name, etc.) along with optional inputs (T-shirt size, food preferences, etc.).</li>
+            <li><i class="fas fa-check"></i> Automatically calculate the payable amount based on selected options.</li>
+            <li><i class="fas fa-check"></i> Generate and send automated receipts/acknowledgments instantly by email &amp; WhatsApp (Optional).</li>
+            <li><i class="fas fa-check"></i> Real-time Google Sheet update for seamless tracking and reporting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PRICING ======= -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Pricing</span>
+        <h2 class="section-title">Two simple plans. <span class="gold">Pick what fits.</span></h2>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Registration Form + Payment Gateway</h3>
+          <div class="desc">Everything you need to start collecting payments online.</div>
+          <div class="price-amount">
+            <span class="currency">Rs.</span>
+            <span class="price">3,999</span>
+          </div>
+          <div class="price-meta">One-time setup &nbsp;|&nbsp; GST @ 18% Applicable</div>
+          <div class="price-cta">
+            <a href="https://zfrmz.com/kce5HXVU5EraHzuhmoKa" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Buy Now <i class="fas fa-arrow-right btn-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="price-card featured">
+          <h3>Registration Form + Payment Gateway + KYC Verification</h3>
+          <div class="desc">For trust accounts &amp; clubs that need full compliance verification.</div>
+          <div class="price-amount">
+            <span class="currency">Rs.</span>
+            <span class="price">5,999</span>
+          </div>
+          <div class="price-meta">One-time setup &nbsp;|&nbsp; GST @ 18% Applicable</div>
+          <div class="price-cta">
+            <a href="https://zfrmz.com/kce5HXVU5EraHzuhmoKa" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Buy Now <i class="fas fa-arrow-right btn-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-pointers">
+        <div class="price-pointer">
+          <div class="pp-icon"><i class="fas fa-check"></i></div>
+          <h4>One-time cost of setting up and implementation</h4>
+        </div>
+        <div class="price-pointer">
+          <div class="pp-icon"><i class="fas fa-percent"></i></div>
+          <h4>Transaction charges by the Payment Gateway is 2.5% per transaction</h4>
+        </div>
+        <div class="price-pointer">
+          <div class="pp-icon"><i class="fas fa-link"></i></div>
+          <h4>Data Collection Form, linked to the payment gateway</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TIMELINE ======= -->
+  <section class="section timeline-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Timeline</span>
+        <h2 class="section-title">Live in <span style="color:var(--rotary-gold-bright)">days, not weeks.</span></h2>
+        <p class="section-sub">Once you subscribe, our team gets your gateway set up and running.</p>
+      </div>
+      <div class="timeline-grid">
+        <div class="tl-card">
+          <div class="tl-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <h4>Registration form with payment gateway</h4>
+            <p>Standard onboarding — go live and start accepting payments.</p>
+            <span class="duration">1 working day</span>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h4>Registration form with payment gateway + KYC verification</h4>
+            <p>Full compliance verification — best for trust accounts &amp; large events.</p>
+            <span class="duration">7 to 8 working days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= KYC DOCUMENTS ======= -->
+  <section class="section kyc">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">KYC Documents</span>
+        <h2 class="section-title">Documents required <span class="gold">for KYC.</span></h2>
+        <p class="section-sub">A simple checklist of what to keep handy when subscribing.</p>
+      </div>
+      <div class="kyc-grid">
+        <div class="kyc-card">
+          <div class="kyc-card-head">
+            <span class="ic"><i class="fas fa-folder-open"></i></span>
+            <div>
+              <h4>Club / District Account</h4>
+              <small>Standard KYC checklist</small>
+            </div>
+          </div>
+          <ul>
+            <li><i class="fas fa-check"></i> Email ID for setting up the payment gateway for the club/event (cannot be changed in future)</li>
+            <li><i class="fas fa-check"></i> PAN card of Club or authorised Signatory</li>
+            <li><i class="fas fa-check"></i> Club charter</li>
+            <li><i class="fas fa-check"></i> Scan copy of cancelled cheque</li>
+            <li><i class="fas fa-check"></i> Latest Bank statement download copy (where the address &amp; IFSC code is prominently visible)</li>
+            <li><i class="fas fa-check"></i> GST Certificate (if the club has a GST number)</li>
+          </ul>
+        </div>
+        <div class="kyc-card">
+          <div class="kyc-card-head">
+            <span class="ic"><i class="fas fa-folder-plus"></i></span>
+            <div>
+              <h4>Trust Account</h4>
+              <small>Additional documents needed</small>
+            </div>
+          </div>
+          <ul>
+            <li><i class="fas fa-check"></i> 80G Certificate (if available, depends on case to case)</li>
+            <li><i class="fas fa-check"></i> FCRA (if available, depends on case to case)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FINAL CTA ======= -->
+  <section class="cta-final" id="contact">
+    <div class="container">
+      <div class="cta-card reveal">
+        <span class="hero-eyebrow" style="margin-bottom:14px;"><span class="pulse-dot"></span>Ready in 1 working day</span>
+        <h2>Run your next event with zero collection headaches.</h2>
+        <p>Subscribe today, or talk to our team for a custom quote tailored to your club or district.</p>
+        <div class="cta-actions">
+          <a href="https://zfrmz.com/kce5HXVU5EraHzuhmoKa" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Buy Now <i class="fas fa-arrow-right btn-arrow"></i>
+          </a>
+          <a href="https://zfrmz.com/upkXFwarfw8LhKX8Oidb" target="_blank" rel="noopener" class="btn btn-ghost-light btn-lg">
+            <i class="fas fa-file-invoice"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky quote button -->
+  <div class="sticky-quote">
+    <a href="https://zfrmz.com/upkXFwarfw8LhKX8Oidb" target="_blank" rel="noopener" class="btn btn-primary">
+      <i class="fas fa-file-invoice"></i> Get a Quote
+    </a>
+  </div>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-contact">
+        <h3>For more information, please contact</h3>
+        <p class="lead">We're here Monday to Friday — happy to help with anything Rotary digital.</p>
+        <div class="contact-grid">
+          <a href="mailto:support@rizones4567.org" class="contact-card">
+            <span class="ic"><i class="fas fa-envelope"></i></span>
+            <div>
+              <small>Email</small>
+              <strong>support@rizones4567.org</strong>
+            </div>
+          </a>
+          <a href="tel:+918424064369" class="contact-card">
+            <span class="ic"><i class="fas fa-phone-alt"></i></span>
+            <div>
+              <small>Help line</small>
+              <strong>+91 84240 64369 / +91 89287 55144</strong>
+            </div>
+          </a>
+          <div class="contact-card">
+            <span class="ic"><i class="far fa-clock"></i></span>
+            <div>
+              <small>Office hours</small>
+              <strong>10:00 AM – 6:30 PM (Mon–Fri)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Rotary Zones 4, 5, 6 &amp; 7. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      const drawer = document.getElementById('drawer');
+      const scrim = document.getElementById('scrim');
+      const open  = () => { drawer.classList.add('open'); scrim.classList.add('show'); document.body.style.overflow='hidden'; };
+      const close = () => { drawer.classList.remove('open'); scrim.classList.remove('show'); document.body.style.overflow=''; };
+      document.getElementById('navToggle').addEventListener('click', open);
+      document.getElementById('drawerClose').addEventListener('click', close);
+      scrim.addEventListener('click', close);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    });
+
+    function cycleScenes() {
+      const scenes = document.querySelectorAll('.browser-body .scene');
+      let i = 0;
+      setInterval(() => {
+        scenes.forEach(s => s.classList.remove('is-active'));
+        i = (i + 1) % scenes.length;
+        scenes[i].classList.add('is-active');
+      }, 3500);
+    }
+
+    window.addEventListener('load', function () {
+      cycleScenes();
+      if (!window.gsap) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero entrance
+      gsap.from('#heroH1', { y: 30, opacity: 0, duration: 1.0, ease: 'expo.out' });
+      gsap.from('#heroSub', { y: 20, opacity: 0, duration: 0.9, delay: 0.15, ease: 'expo.out' });
+      gsap.from('#heroCTA > *', { y: 14, opacity: 0, duration: 0.7, delay: 0.30, stagger: 0.08, ease: 'expo.out' });
+      gsap.from('.hero-bullets > span', { y: 10, opacity: 0, duration: 0.6, delay: 0.5, stagger: 0.06, ease: 'expo.out' });
+      gsap.from('.form-stage', { y: 50, opacity: 0, scale: 0.94, duration: 1.1, delay: 0.4, ease: 'expo.out' });
+
+      const animateHead = (sectionSel) => {
+        const head = document.querySelector(`${sectionSel} .section-head`);
+        if (!head) return;
+        head.classList.add('handled');
+        gsap.set(head, { opacity: 1, y: 0 });
+        const targets = head.querySelectorAll('.section-eyebrow, .section-title, .section-sub');
+        gsap.fromTo(targets,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', stagger: 0.12,
+            scrollTrigger: { trigger: head, start: 'top 85%', once: true } });
+      };
+
+      // Benefits PG
+      animateHead('#features-pg');
+      gsap.utils.toArray('#features-pg .prod-list li').forEach((el, i) => {
+        gsap.fromTo(el,
+          { x: -30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.7, ease: 'expo.out', delay: i * 0.07,
+            scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
+      });
+      gsap.utils.toArray('#features-pg .method').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 30, opacity: 0, scale: 0.96 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.4)', delay: i * 0.1,
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+      });
+
+      // Benefits Data Form
+      animateHead('#features-data');
+      gsap.utils.toArray('#features-data .prod-list li').forEach((el, i) => {
+        gsap.fromTo(el,
+          { x: 30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.7, ease: 'expo.out', delay: i * 0.07,
+            scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
+      });
+      gsap.utils.toArray('#features-data .data-fields .f').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: 'expo.out', delay: i * 0.06,
+            scrollTrigger: { trigger: '#features-data .data-illus', start: 'top 85%', once: true } });
+      });
+
+      // Pricing
+      animateHead('#pricing');
+      gsap.utils.toArray('.price-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 60, opacity: 0, scale: 0.96 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.95, ease: 'back.out(1.3)', delay: i * 0.12,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+      gsap.utils.toArray('.price-pointer').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, ease: 'expo.out', delay: i * 0.1,
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+      });
+
+      // Timeline
+      animateHead('.timeline-section');
+      gsap.utils.toArray('.tl-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 40, opacity: 0, scale: 0.96 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: 'expo.out', delay: i * 0.12,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+
+      // KYC
+      animateHead('.kyc');
+      gsap.utils.toArray('.kyc-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 40, opacity: 0, x: i === 0 ? -30 : 30 },
+          { y: 0, opacity: 1, x: 0, duration: 0.9, ease: 'expo.out', delay: i * 0.1,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+
+      // CTA
+      gsap.fromTo('.cta-card',
+        { y: 50, opacity: 0, scale: 0.96 },
+        { y: 0, opacity: 1, scale: 1, duration: 1.0, ease: 'back.out(1.2)',
+          scrollTrigger: { trigger: '.cta-card', start: 'top 85%', once: true } });
+
+      gsap.utils.toArray('.reveal').forEach(el => {
+        if (el.classList.contains('handled')) return;
+        gsap.fromTo(el,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, ease: 'expo.out',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+    });
+  </script>
+</body>
+</html>

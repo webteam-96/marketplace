@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Hotjar -->
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3411850,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8BHP9P');</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Personalised Communication With Your Members Officially Using Our Mass Email Services. Spam-free bulk email for greetings, service projects and announcements." />
+  <meta name="theme-color" content="#0D1B3E" />
+  <title>Mass Email — Personalised Bulk Email Communication for Rotary Clubs</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <style>
+    :root{
+      --rotary-blue:#17458F;--rotary-blue-dark:#0D1B3E;--rotary-blue-deep:#081229;
+      --rotary-gold:#F7A81B;--rotary-gold-bright:#FFC557;
+      --mail-purple:#6D28D9;--mail-violet:#7C3AED;--mail-purple-light:#A78BFA;
+      --white:#FFFFFF;
+      --ink-900:#0B1220;--ink-700:#1E293B;--ink-500:#475569;--ink-400:#64748B;
+      --ink-300:#94A3B8;--ink-200:#CBD5E1;--ink-100:#E2E8F0;--ink-50:#F1F5F9;--ink-25:#F8FAFC;
+      --grad-hero:radial-gradient(1200px 600px at 70% 0%,rgba(247,168,27,.18),transparent 60%),radial-gradient(900px 500px at 0% 100%,rgba(23,69,143,.5),transparent 55%),linear-gradient(180deg,#0D1B3E 0%,#081229 100%);
+      --shadow-sm:0 1px 2px rgba(11,18,32,.06),0 1px 3px rgba(11,18,32,.05);
+      --shadow-md:0 6px 20px rgba(11,18,32,.08);
+      --shadow-lg:0 24px 60px rgba(11,18,32,.12);
+      --shadow-gold:0 14px 40px rgba(247,168,27,.35);
+      --r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:36px;
+      --container:1200px;
+      --t-fast:200ms cubic-bezier(.2,.8,.2,1);
+      --t-mid:400ms cubic-bezier(.2,.8,.2,1);
+      --t-slow:700ms cubic-bezier(.2,.8,.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    *::selection{background:var(--rotary-gold);color:var(--rotary-blue-dark)}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--ink-700);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink-900);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0}
+    p{margin:0}
+    button{font-family:inherit;cursor:pointer;border:0;background:none}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 24px;border-radius:100px;transition:transform var(--t-fast),box-shadow var(--t-fast),background var(--t-fast);position:relative;overflow:hidden;cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--rotary-gold);color:var(--rotary-blue-dark);box-shadow:var(--shadow-gold)}
+    .btn-primary:hover{background:var(--rotary-gold-bright);transform:translateY(-2px)}
+    .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transition:left var(--t-slow)}
+    .btn-primary:hover::before{left:130%}
+    .btn-secondary{background:var(--white);color:var(--rotary-blue-dark);border:1px solid var(--ink-100);box-shadow:var(--shadow-sm)}
+    .btn-secondary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--rotary-gold)}
+    .btn-ghost-light{background:rgba(255,255,255,.06);color:var(--white);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px)}
+    .btn-ghost-light:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);border-color:rgba(247,168,27,.55)}
+    .btn-arrow{transition:transform var(--t-fast)}
+    .btn:hover .btn-arrow{transform:translateX(4px)}
+    .btn-lg{padding:18px 32px;font-size:16px}
+    .btn-purple{background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple));color:#fff;box-shadow:0 14px 40px rgba(124,58,237,.35)}
+    .btn-purple:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(124,58,237,.45)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:padding var(--t-mid),background var(--t-mid),box-shadow var(--t-mid)}
+    .nav.scrolled{padding:10px 0;background:rgba(13,27,62,.85);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .nav-brand{display:flex;align-items:center;gap:12px;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:18px}
+    .nav-brand .brand-mark{width:36px;height:36px;display:grid;place-items:center;background:var(--rotary-gold);color:var(--rotary-blue-dark);border-radius:10px;font-size:18px;box-shadow:0 6px 20px rgba(247,168,27,.4)}
+    .nav-brand small{display:block;font-weight:500;font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}
+    .nav-links a{color:rgba(255,255,255,.85);font-weight:500;font-size:14.5px;padding:8px 14px;border-radius:100px;transition:color var(--t-fast),background var(--t-fast)}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.08)}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .nav-cta .btn{padding:10px 18px;font-size:14px}
+    .nav-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;border-radius:10px;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+
+    .drawer{position:fixed;top:0;right:-100%;width:min(360px,86vw);height:100vh;background:var(--rotary-blue-deep);z-index:200;padding:80px 28px 28px;transition:right var(--t-mid);box-shadow:-20px 0 60px rgba(0,0,0,.4)}
+    .drawer.open{right:0}
+    .drawer .close-x{position:absolute;top:18px;right:18px;width:42px;height:42px;display:grid;place-items:center;color:var(--white);background:rgba(255,255,255,.06);border-radius:10px}
+    .drawer ul{list-style:none;padding:0;margin:0 0 18px}
+    .drawer li a{display:block;padding:14px 0;color:rgba(255,255,255,.92);font-weight:600;font-size:17px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .drawer-cta{margin-top:16px}
+    .drawer-cta .btn{width:100%}
+    .scrim{position:fixed;inset:0;background:rgba(8,18,41,.55);backdrop-filter:blur(4px);z-index:150;opacity:0;pointer-events:none;transition:opacity var(--t-mid)}
+    .scrim.show{opacity:1;pointer-events:auto}
+
+    /* HERO */
+    .hero{position:relative;background:var(--grad-hero);color:var(--white);overflow:hidden;padding:130px 0 130px;isolation:isolate}
+    .hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:0}
+    .hero-blob.b1{width:420px;height:420px;background:radial-gradient(circle,rgba(167,139,250,.45),transparent 65%);top:-160px;right:-120px;animation:floatBlob 14s ease-in-out infinite}
+    .hero-blob.b2{width:340px;height:340px;background:radial-gradient(circle,rgba(247,168,27,.45),transparent 65%);bottom:-120px;left:-100px;animation:floatBlob 18s ease-in-out infinite reverse}
+    @keyframes floatBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
+    .hero-wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:110px;z-index:2;pointer-events:none;display:block}
+    .hero-wave .wave-accent{fill:none;stroke:rgba(247,168,27,.35);stroke-width:1}
+    .hero-wave .wave-fill{fill:#FFFFFF}
+    .hero .container{position:relative;z-index:2}
+    .hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:50px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(167,139,250,.16);border:1px solid rgba(167,139,250,.4);border-radius:100px;color:#C4B5FD;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .hero-eyebrow .pulse-dot{width:8px;height:8px;background:var(--mail-violet);border-radius:50%;box-shadow:0 0 0 0 rgba(167,139,250,.6);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(167,139,250,.6)}70%{box-shadow:0 0 0 12px rgba(167,139,250,0)}100%{box-shadow:0 0 0 0 rgba(167,139,250,0)}}
+    .hero h1{color:var(--white);font-size:clamp(34px,4.5vw,56px);font-weight:800;letter-spacing:-.035em;margin:18px 0 18px;line-height:1.1}
+    .hero h1 .gold{background:linear-gradient(120deg,var(--rotary-gold-bright) 0%,var(--rotary-gold) 60%,#E58E00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+    .hero h1 .purple{background:linear-gradient(120deg,#C4B5FD 0%,var(--mail-purple-light) 60%,var(--mail-violet) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+    .hero p.hero-sub{font-size:clamp(15px,1.1vw,17px);color:rgba(255,255,255,.78);max-width:580px;margin-bottom:26px;line-height:1.65}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .hero-bullets{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 22px;color:rgba(255,255,255,.85);font-size:14px;font-weight:500}
+    .hero-bullets span{display:inline-flex;align-items:center;gap:8px}
+    .hero-bullets i{width:20px;height:20px;border-radius:50%;background:rgba(167,139,250,.22);color:#C4B5FD;display:inline-grid;place-items:center;font-size:10px}
+
+    /* INBOX MOCKUP */
+    .inbox-stage{position:relative;justify-self:end;width:100%;max-width:520px;perspective:1500px}
+    .inbox-window{
+      background:#fff;
+      border:1px solid rgba(11,18,32,.08);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 50px 90px rgba(0,0,0,.45),0 0 0 1px rgba(167,139,250,.1),0 0 60px rgba(167,139,250,.12);
+      transform:rotateY(-9deg) rotateX(6deg);
+      transition:transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+    .inbox-window:hover{transform:rotateY(-4deg) rotateX(3deg)}
+    .inbox-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:linear-gradient(180deg,#F8FAFC,#EEF2F7);border-bottom:1px solid var(--ink-100)}
+    .inbox-bar .dot{width:11px;height:11px;border-radius:50%;background:var(--ink-200)}
+    .inbox-bar .dot.r{background:#FF5F57}.inbox-bar .dot.y{background:#FEBC2E}.inbox-bar .dot.g{background:#28C840}
+    .inbox-bar .url{flex:1;background:#fff;border:1px solid var(--ink-100);border-radius:8px;padding:5px 10px;font-size:11px;color:var(--ink-400);text-align:center}
+    .inbox-bar .url i{color:#10B981;margin-right:6px}
+    .inbox-body{position:relative;height:430px;background:#fff;overflow:hidden}
+    .scene{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+    .scene.is-active{opacity:1}
+
+    /* Scene 1: Inbox list */
+    .gmail-header{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--ink-100);background:#fff}
+    .gmail-header .gmail-logo{display:inline-flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans';font-weight:800;color:var(--ink-900);font-size:14px}
+    .gmail-header .gmail-logo i{color:#EA4335;font-size:18px}
+    .gmail-header .search{flex:1;background:var(--ink-50);border-radius:8px;padding:5px 10px;font-size:11px;color:var(--ink-400);display:flex;align-items:center;gap:6px}
+    .gmail-tabs{display:flex;background:#fff;border-bottom:1px solid var(--ink-100)}
+    .gmail-tab{flex:1;padding:8px 10px;font-size:11px;font-weight:600;color:var(--ink-500);text-align:center;border-bottom:2px solid transparent;display:flex;align-items:center;justify-content:center;gap:6px}
+    .gmail-tab.active{color:var(--rotary-blue);border-bottom-color:var(--rotary-blue)}
+    .gmail-tab .dot{width:6px;height:6px;border-radius:50%;background:var(--rotary-gold)}
+    .gmail-list{padding:0}
+    .gm-row{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--ink-50);transition:background .2s;cursor:pointer;position:relative}
+    .gm-row.priority{background:linear-gradient(90deg,rgba(247,168,27,.06),transparent 80%)}
+    .gm-row.priority::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--rotary-gold),var(--rotary-gold-bright))}
+    .gm-row .star{color:var(--rotary-gold);font-size:13px;flex-shrink:0}
+    .gm-row .star.empty{color:var(--ink-200)}
+    .gm-row .avatar{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:11px;color:#fff;flex-shrink:0}
+    .gm-row .avatar.a1{background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark)}
+    .gm-row .avatar.a2{background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple))}
+    .gm-row .avatar.a3{background:linear-gradient(135deg,#10B981,#047857)}
+    .gm-row .avatar.a4{background:linear-gradient(135deg,#3B82F6,#2563EB)}
+    .gm-row .meta{flex:1;min-width:0}
+    .gm-row .meta .from{font-family:'Plus Jakarta Sans';font-weight:700;color:var(--ink-900);font-size:12px;display:flex;justify-content:space-between;align-items:center}
+    .gm-row .meta .from .time{font-size:10px;color:var(--ink-400);font-weight:500}
+    .gm-row .meta .subject{font-size:11.5px;color:var(--ink-700);font-weight:600;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .gm-row .meta .preview{font-size:10.5px;color:var(--ink-400);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:1px}
+    .gm-row .badge{font-size:9px;padding:2px 7px;border-radius:100px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;font-family:'Plus Jakarta Sans'}
+    .gm-row .badge.gold{background:rgba(247,168,27,.14);color:#B47800}
+    .gm-row .badge.purple{background:rgba(124,58,237,.12);color:var(--mail-violet)}
+    .gm-row .badge.green{background:rgba(16,185,129,.12);color:#047857}
+    .priority-bar{padding:8px 14px;background:linear-gradient(135deg,rgba(247,168,27,.08),rgba(247,168,27,.02));border-bottom:1px solid rgba(247,168,27,.16);font-size:10.5px;color:#B47800;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
+    /* Scene 2: Email preview */
+    .email-mock{padding:18px;height:100%;overflow:hidden}
+    .email-from{display:flex;gap:10px;align-items:center;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--ink-100)}
+    .email-from .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);display:grid;place-items:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;flex-shrink:0}
+    .email-from .meta{flex:1}
+    .email-from .meta .name{font-family:'Plus Jakarta Sans';font-weight:700;color:var(--ink-900);font-size:13px}
+    .email-from .meta .email{font-size:11px;color:var(--ink-400)}
+    .email-from .time{font-size:10.5px;color:var(--ink-400);font-weight:600}
+    .email-subject{font-family:'Plus Jakarta Sans';font-weight:800;color:var(--ink-900);font-size:16px;margin-bottom:12px;line-height:1.3}
+    .email-body{font-size:11.5px;color:var(--ink-700);line-height:1.6}
+    .email-body p{margin-bottom:8px}
+    .email-body strong{color:var(--rotary-blue);font-weight:700}
+    .email-banner{background:linear-gradient(135deg,var(--rotary-blue),var(--rotary-blue-dark));border-radius:10px;padding:18px;color:#fff;text-align:center;margin:12px 0;position:relative;overflow:hidden}
+    .email-banner::before{content:'';position:absolute;right:-30px;top:-30px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(247,168,27,.4),transparent 60%)}
+    .email-banner h6{color:#fff;font-size:13px;margin-bottom:4px;font-family:'Plus Jakarta Sans';font-weight:800;position:relative}
+    .email-banner p{color:rgba(255,255,255,.85);font-size:10.5px;margin:0;position:relative}
+    .email-cta{display:inline-block;margin-top:10px;background:var(--rotary-gold);color:var(--rotary-blue-dark);padding:6px 14px;border-radius:100px;font-weight:800;font-size:10.5px;font-family:'Plus Jakarta Sans';position:relative}
+    .email-sig{margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-100);font-size:10.5px;color:var(--ink-500);font-style:italic}
+
+    .floating-card{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:14px;padding:12px 16px;color:var(--white);font-size:12.5px;font-weight:600;box-shadow:0 18px 40px rgba(0,0,0,.25);animation:floatY 6s ease-in-out infinite;display:flex;align-items:center;gap:10px;z-index:3}
+    .floating-card.fc-1{top:-10px;left:-50px;animation-delay:0s}
+    .floating-card.fc-2{bottom:30px;right:-40px;animation-delay:1.5s}
+    .floating-card .fc-icon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:rgba(167,139,250,.25);color:#C4B5FD;font-size:13px}
+    .floating-card.fc-2 .fc-icon{background:rgba(247,168,27,.18);color:var(--rotary-gold-bright)}
+    .floating-card .fc-meta small{display:block;color:rgba(255,255,255,.6);font-weight:500;font-size:10.5px;margin-top:1px}
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+    /* SECTION COMMON */
+    .section{padding:110px 0}
+    .section-head{text-align:center;max-width:780px;margin:0 auto 60px}
+    .section-eyebrow{display:inline-block;color:var(--rotary-blue);background:rgba(23,69,143,.08);border:1px solid rgba(23,69,143,.15);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+    .section-title{font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-.025em}
+    .section-title .gold{background:linear-gradient(135deg,var(--rotary-gold),#E58E00);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .section-title .purple{background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .section-sub{color:var(--ink-500);font-size:17px;margin-top:16px;line-height:1.65}
+
+    /* FEATURES */
+    .features{background:var(--ink-25)}
+    .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
+    .feat-card{background:var(--white);border:1px solid var(--ink-100);border-radius:var(--r-xl);padding:32px;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid);position:relative;overflow:hidden;display:flex;align-items:flex-start;gap:18px}
+    .feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.06),transparent 50%);opacity:0;transition:opacity var(--t-mid);pointer-events:none}
+    .feat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(124,58,237,.4)}
+    .feat-card:hover::before{opacity:1}
+    .feat-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,.14),rgba(124,58,237,.04));color:var(--mail-violet);font-size:22px;border:1px solid rgba(124,58,237,.22);box-shadow:0 6px 18px rgba(124,58,237,.12);transition:transform var(--t-mid),background var(--t-mid),color var(--t-mid);flex-shrink:0;position:relative;z-index:1}
+    .feat-card:hover .feat-icon{transform:scale(1.08) rotate(-4deg);background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple));color:#fff}
+    .feat-card .feat-body{position:relative;z-index:1}
+    .feat-card h4{font-size:18px;margin-bottom:8px;color:var(--ink-900)}
+    .feat-card p{color:var(--ink-500);font-size:14.5px;line-height:1.55}
+
+    /* BENEFITS */
+    .benefits-band{background:linear-gradient(135deg,var(--mail-purple) 0%,#3B0764 100%);color:#fff;position:relative;overflow:hidden}
+    .benefits-band::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 350px at 10% 0%,rgba(167,139,250,.3),transparent 60%),radial-gradient(600px 300px at 95% 100%,rgba(247,168,27,.2),transparent 55%);pointer-events:none}
+    .benefits-band .container{position:relative;z-index:1}
+    .benefits-band .section-eyebrow{color:#C4B5FD;background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.3)}
+    .benefits-band .section-title{color:#fff}
+    .benefits-band .section-sub{color:rgba(255,255,255,.7)}
+    .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto}
+    .ben-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);border-radius:var(--r-xl);padding:34px 28px;text-align:center;transition:transform var(--t-mid),border-color var(--t-mid)}
+    .ben-card:hover{transform:translateY(-6px);border-color:rgba(167,139,250,.4)}
+    .ben-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple));color:#fff;display:grid;place-items:center;font-size:24px;margin:0 auto 18px;box-shadow:0 14px 32px rgba(124,58,237,.4)}
+    .ben-card h4{color:#fff;font-size:17px;margin-bottom:6px}
+    .ben-card p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.5}
+
+    /* MODULES */
+    .modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
+    .module-card{background:var(--white);border:1px solid var(--ink-100);border-radius:var(--r-xl);padding:36px;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid);position:relative;overflow:hidden}
+    .module-card::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(247,168,27,.1),transparent 60%);pointer-events:none;opacity:0;transition:opacity var(--t-mid)}
+    .module-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:rgba(247,168,27,.4)}
+    .module-card:hover::before{opacity:1}
+    .module-icon{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:26px;margin-bottom:20px;color:#fff;box-shadow:var(--shadow-md);position:relative;z-index:1}
+    .module-icon.m1{background:linear-gradient(135deg,#EC4899,#BE185D)}
+    .module-icon.m2{background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple))}
+    .module-card h4{font-size:20px;margin-bottom:10px;position:relative;z-index:1}
+    .module-card p{color:var(--ink-500);font-size:14.5px;line-height:1.55;position:relative;z-index:1}
+
+    /* PRICING */
+    .pricing-section{background:linear-gradient(180deg,var(--ink-25),var(--white));position:relative;overflow:hidden}
+    .pricing-section::before{content:'';position:absolute;top:30%;left:50%;width:900px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 60%);transform:translateX(-50%);pointer-events:none;filter:blur(40px)}
+    .pricing-section .container{position:relative;z-index:1}
+    .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+    .price-card{background:var(--white);border:2px solid var(--ink-100);border-radius:var(--r-2xl);padding:40px 34px;text-align:center;position:relative;overflow:hidden;transition:transform var(--t-mid),box-shadow var(--t-mid),border-color var(--t-mid)}
+    .price-card:hover{transform:translateY(-6px);border-color:var(--mail-violet);box-shadow:0 30px 70px rgba(124,58,237,.18)}
+    .price-card.featured{border-color:rgba(247,168,27,.5);box-shadow:0 22px 50px rgba(247,168,27,.18)}
+    .price-card.featured::after{content:'BEST VALUE';position:absolute;top:18px;right:-32px;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);font-family:'Plus Jakarta Sans';font-weight:800;font-size:10.5px;letter-spacing:.1em;padding:5px 36px;transform:rotate(35deg);box-shadow:0 4px 10px rgba(247,168,27,.35)}
+    .price-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--mail-violet),var(--mail-purple));color:#fff;display:grid;place-items:center;font-size:24px;margin:0 auto 16px;box-shadow:0 12px 30px rgba(124,58,237,.35)}
+    .price-card.featured .price-icon{background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);box-shadow:var(--shadow-gold)}
+    .price-card h3{font-size:20px;margin-bottom:6px}
+    .price-card .desc{color:var(--ink-500);font-size:13.5px;margin-bottom:18px}
+    .price-amount{display:flex;align-items:baseline;justify-content:center;gap:4px;margin:14px 0 2px}
+    .price-amount .currency{font-family:'Plus Jakarta Sans';font-size:18px;color:var(--ink-500);font-weight:600}
+    .price-amount .price{font-family:'Plus Jakarta Sans';font-size:54px;font-weight:800;color:var(--rotary-blue-dark);letter-spacing:-.03em;line-height:1}
+    .price-meta{color:var(--ink-400);font-size:12.5px;margin-bottom:6px}
+    .price-rate{color:var(--mail-violet);font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;margin-bottom:24px}
+    .price-cta .btn{width:100%}
+
+    /* CTA */
+    .cta-final{padding:120px 0}
+    .cta-card{background:linear-gradient(135deg,var(--mail-purple) 0%,#3B0764 100%);border-radius:var(--r-2xl);padding:70px 50px;text-align:center;color:var(--white);position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+    .cta-card::before,.cta-card::after{content:'';position:absolute;width:360px;height:360px;border-radius:50%;filter:blur(60px);pointer-events:none}
+    .cta-card::before{background:rgba(167,139,250,.45);top:-120px;right:-80px}
+    .cta-card::after{background:rgba(247,168,27,.4);bottom:-120px;left:-80px}
+    .cta-card>*{position:relative;z-index:1}
+    .cta-card h2{color:#fff;font-size:clamp(30px,4vw,46px);max-width:760px;margin:16px auto 18px}
+    .cta-card p{color:rgba(255,255,255,.78);font-size:18px;max-width:600px;margin:0 auto 30px}
+    .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* BRAND LOGO */
+    .nav-brand{display:flex;align-items:center;text-decoration:none;gap:0}
+    .nav-logo{height:46px;width:auto;display:block;transition:height var(--t-mid)}
+    .nav.scrolled .nav-logo{height:38px}
+
+    /* FOOTER (minimal) */
+    footer.site-footer{background:var(--rotary-blue-deep);color:rgba(255,255,255,.7);padding:60px 0 26px}
+    .footer-contact{text-align:center;margin-bottom:36px}
+    .footer-contact h3{color:var(--white);font-size:clamp(20px,2.4vw,26px);margin-bottom:6px;font-weight:700;letter-spacing:-.01em}
+    .footer-contact .lead{color:rgba(255,255,255,.6);font-size:14.5px;margin:0 auto 28px;max-width:520px}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto}
+    .contact-card{display:flex;align-items:center;gap:14px;padding:20px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;text-align:left;transition:transform var(--t-mid),background var(--t-mid),border-color var(--t-mid);text-decoration:none;color:inherit}
+    .contact-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07);border-color:rgba(247,168,27,.35)}
+    .contact-card .ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--rotary-gold),var(--rotary-gold-bright));color:var(--rotary-blue-dark);display:grid;place-items:center;font-size:18px;flex-shrink:0;box-shadow:0 6px 16px rgba(247,168,27,.3)}
+    .contact-card small{display:block;color:rgba(255,255,255,.55);font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:3px}
+    .contact-card strong{color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;display:block;line-height:1.4}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:13px;color:rgba(255,255,255,.55)}
+    @media (max-width:768px){.contact-grid{grid-template-columns:1fr;gap:12px}}
+
+    .reveal{opacity:0;transform:translateY(40px)}
+
+    @media (max-width:1024px){
+      .hero-grid{grid-template-columns:1fr;gap:60px}
+      .inbox-stage{justify-self:center;max-width:460px}
+      .inbox-window{transform:none}
+      .feat-grid{grid-template-columns:1fr}
+      .ben-grid{grid-template-columns:1fr;max-width:580px}
+      .modules-grid{grid-template-columns:1fr}
+      .price-grid{grid-template-columns:1fr;max-width:520px}
+      .footer-grid{grid-template-columns:1.2fr 1fr 1fr}
+      .footer-grid .footer-col:last-child{grid-column:span 3}
+    }
+    @media (max-width:768px){
+      .nav-links,.nav-cta .btn{display:none}
+      .nav-toggle{display:flex}
+      .hero{padding:120px 0 110px}
+      .section{padding:80px 0}
+      .feat-card{flex-direction:column;gap:14px}
+      .cta-card{padding:50px 24px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-grid .footer-col:last-child{grid-column:span 1}
+      .floating-card{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .floating-card,.pulse-dot,.hero-blob{animation:none!important}
+      *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BHP9P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ======= NAV ======= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="img/RILOGOw.png" alt="Rizones 4567" class="nav-logo" />
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="dynamic-website.html">Dynamic Website</a></li>
+          <li><a href="member-due-collection.html">Membership Dues</a></li>
+          <li><a href="pg-data-collection.html">Payment Gateway</a></li>
+          <li><a href="mass-whatsapp.html">WhatsApp</a></li>
+          <li><a href="mass-email.html" class="active">Email</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right btn-arrow"></i></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <button class="close-x" id="drawerClose"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dynamic-website.html">Dynamic Website</a></li>
+      <li><a href="member-due-collection.html">Membership Dues</a></li>
+      <li><a href="pg-data-collection.html">Payment Gateway</a></li>
+      <li><a href="mass-whatsapp.html">Mass WhatsApp</a></li>
+      <li><a href="mass-email.html">Mass Email</a></li>
+    </ul>
+    <div class="drawer-cta"><a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right"></i></a></div>
+  </aside>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <svg class="hero-wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wave-accent" d="M0,55 C360,105 1080,105 1440,55"/>
+      <path class="wave-fill" d="M0,60 C360,110 1080,110 1440,60 L1440,110 L0,110 Z"/>
+    </svg>
+
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="pulse-dot"></span><i class="fas fa-envelope-open-text"></i> &nbsp;Mass Email</span>
+        <h1 id="heroH1">
+          Personalised Communication With Your Members Officially Using Our <span class="purple">Mass Email Services</span>.
+        </h1>
+        <p class="hero-sub" id="heroSub">
+          Spam-free bulk email that lands in your members' priority inbox — for greetings, service projects and announcements that look like they were written just for them.
+        </p>
+        <div class="hero-actions" id="heroCTA">
+          <a href="#pricing" class="btn btn-primary">Buy Now <i class="fas fa-arrow-right btn-arrow"></i></a>
+          <a href="#features" class="btn btn-ghost-light"><i class="fas fa-chevron-down"></i> Know More</a>
+        </div>
+        <div class="hero-bullets">
+          <span><i class="fas fa-check"></i> Personalised</span>
+          <span><i class="fas fa-check"></i> Pre-scheduled</span>
+          <span><i class="fas fa-check"></i> Sub-group targeting</span>
+          <span><i class="fas fa-check"></i> Priority inbox</span>
+        </div>
+      </div>
+
+      <div class="inbox-stage">
+        <div class="floating-card fc-1">
+          <span class="fc-icon"><i class="fas fa-paper-plane"></i></span>
+          <span class="fc-meta">Sent to 124<small>Delivered · 100%</small></span>
+        </div>
+        <div class="floating-card fc-2">
+          <span class="fc-icon"><i class="fas fa-inbox"></i></span>
+          <span class="fc-meta">Priority inbox<small>Not spam</small></span>
+        </div>
+
+        <div class="inbox-window">
+          <div class="inbox-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <div class="url"><i class="fas fa-lock"></i>mail.google.com / inbox</div>
+          </div>
+          <div class="inbox-body">
+
+            <!-- Scene 1: Inbox list -->
+            <div class="scene scene-1 is-active" id="scene1">
+              <div class="gmail-header">
+                <span class="gmail-logo"><i class="fas fa-envelope"></i> Inbox</span>
+                <div class="search"><i class="fas fa-search"></i> Search mail</div>
+              </div>
+              <div class="gmail-tabs">
+                <div class="gmail-tab active"><i class="fas fa-inbox"></i> Primary <span class="dot"></span></div>
+                <div class="gmail-tab"><i class="fas fa-tag"></i> Promotions</div>
+                <div class="gmail-tab"><i class="fas fa-users"></i> Social</div>
+              </div>
+              <div class="priority-bar">
+                <i class="fas fa-star"></i> Priority — From your Rotary club
+              </div>
+              <div class="gmail-list">
+                <div class="gm-row priority">
+                  <i class="fas fa-star star"></i>
+                  <div class="avatar a1">RC</div>
+                  <div class="meta">
+                    <div class="from">Rotary Club President <span class="time">9:42 AM</span></div>
+                    <div class="subject">🎂 Happy Birthday, Rtn. Vikram Patil!</div>
+                    <div class="preview">Dear Vikram, on behalf of every member of the club, wishing you a year of joy and service…</div>
+                  </div>
+                  <span class="badge gold">Greetings</span>
+                </div>
+                <div class="gm-row priority">
+                  <i class="fas fa-star star"></i>
+                  <div class="avatar a2">RC</div>
+                  <div class="meta">
+                    <div class="from">Rotary Club Secretary <span class="time">8:15 AM</span></div>
+                    <div class="subject">Annual Conclave 2026 — You're Invited</div>
+                    <div class="preview">Dear Rtn. Vikram, we are excited to invite you to the Annual Conclave at Hotel Excellence on…</div>
+                  </div>
+                  <span class="badge purple">Announce</span>
+                </div>
+                <div class="gm-row priority">
+                  <i class="fas fa-star star"></i>
+                  <div class="avatar a3">RC</div>
+                  <div class="meta">
+                    <div class="from">Service Projects Committee <span class="time">Yesterday</span></div>
+                    <div class="subject">Tree Plantation Drive — 200 trees planted!</div>
+                    <div class="preview">Dear Vikram, thanks to volunteers like you, our drive last weekend planted 200 saplings…</div>
+                  </div>
+                  <span class="badge green">Project</span>
+                </div>
+                <div class="gm-row">
+                  <i class="far fa-star star empty"></i>
+                  <div class="avatar a4">UB</div>
+                  <div class="meta">
+                    <div class="from">Utility Bills <span class="time">Sat</span></div>
+                    <div class="subject">Your monthly statement is ready</div>
+                    <div class="preview">Your bill of ₹2,431 is due on 28 May. View your statement and pay online…</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scene 2: Open email preview -->
+            <div class="scene scene-2" id="scene2">
+              <div class="email-mock">
+                <div class="email-from">
+                  <div class="avatar">RC</div>
+                  <div class="meta">
+                    <div class="name">Rotary Club President</div>
+                    <div class="email">president@rcexcellence.org</div>
+                  </div>
+                  <div class="time">9:42 AM</div>
+                </div>
+                <div class="email-subject">🎂 Happy Birthday, Rtn. Vikram Patil!</div>
+                <div class="email-body">
+                  <p>Dear <strong>Vikram</strong>,</p>
+                  <p>On behalf of every member of <strong>Rotary Club of Excellence</strong>, I am delighted to wish you a very happy birthday.</p>
+                  <div class="email-banner">
+                    <h6>Wishing you a year of joy &amp; service</h6>
+                    <p>From all your Rotary friends</p>
+                    <span class="email-cta">Send a thank-you note →</span>
+                  </div>
+                  <p>May this year bring you good health, lasting happiness and many more opportunities to make a difference.</p>
+                  <div class="email-sig">— Rtn. Vinay Sharma · President 2025-26</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BEST FEATURES ======= -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Best Features</span>
+        <h2 class="section-title">Built for clubs that <span class="purple">communicate officially</span>.</h2>
+        <p class="section-sub">Every feature exists so your communications look like they were written for one Rotarian — even when sent to all of them.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fas fa-mail-bulk"></i></div>
+          <div class="feat-body">
+            <h4>Send emails to all club members in one go</h4>
+            <p>One compose, every Rotarian reached — no copy-paste, no BCC chaos, no missed names.</p>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fas fa-user-tag"></i></div>
+          <div class="feat-body">
+            <h4>Send mass emails that seem personal, straight from your email ID</h4>
+            <p>Each member sees an email addressed to them, sent from your own club ID — not a third-party.</p>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i class="far fa-clock"></i></div>
+          <div class="feat-body">
+            <h4>Send a series of emails and pre-schedule your messages</h4>
+            <p>Plan once, deliver across weeks — set up reminders, sequences and follow-ups in advance.</p>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><i class="fas fa-filter"></i></div>
+          <div class="feat-body">
+            <h4>Select the members as per the sub-group you want to mass email</h4>
+            <p>Target specific committees, board members or activity sub-groups instead of always emailing everyone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BENEFITS ======= -->
+  <section class="section benefits-band">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Benefits</span>
+        <h2 class="section-title">Look professional. <span style="color:#C4B5FD">Land in primary inbox.</span></h2>
+      </div>
+      <div class="ben-grid">
+        <div class="ben-card">
+          <div class="ben-icon"><i class="fas fa-paint-brush"></i></div>
+          <h4>Email formatting made easy</h4>
+          <p>Beautiful templates for greetings, announcements and project updates — no design skills required.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon"><i class="fas fa-address-book"></i></div>
+          <h4>Email will go to all members as per club directory</h4>
+          <p>Always synced with your club directory — no manual list management or stale addresses.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon"><i class="fas fa-inbox"></i></div>
+          <h4>It will land in your member's priority inbox</h4>
+          <p>Authenticated sending domains and best-in-class delivery — your emails stay out of spam and promotions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= MODULES ======= -->
+  <section class="section" id="modules">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Mass Email Modules</span>
+        <h2 class="section-title">Two ready-to-use <span class="gold">email templates</span>.</h2>
+        <p class="section-sub">Pick a module, fill in the details, hit send — everything else runs automatically.</p>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-icon m1"><i class="fas fa-birthday-cake"></i></div>
+          <h4>Greetings</h4>
+          <p>Automated email from Club president to every member on their special days (Birthday and Anniversary).</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon m2"><i class="fas fa-bullhorn"></i></div>
+          <h4>Service Projects / Announcements</h4>
+          <p>Mass Mail to notify club activities or important announcements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PRICING ======= -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Pricing</span>
+        <h2 class="section-title">Simple bulk pricing. <span class="purple">No subscriptions.</span></h2>
+        <p class="section-sub">Pay only for the emails you actually send. Buy a pack, top up anytime.</p>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>Starter Pack</h3>
+          <div class="desc">Great for clubs sending regular greetings &amp; updates.</div>
+          <div class="price-amount">
+            <span class="currency">Rs.</span>
+            <span class="price">2,000</span>
+          </div>
+          <div class="price-meta">GST @ 18% Applicable</div>
+          <div class="price-rate">10,000 emails included</div>
+          <div class="price-cta">
+            <a href="https://zfrmz.com/Dcd7NHzbosgerBIiPgqF" target="_blank" rel="noopener" class="btn btn-purple btn-lg">
+              <i class="fas fa-paper-plane"></i> Buy Now
+            </a>
+          </div>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Power Pack</h3>
+          <div class="desc">Best for districts &amp; clubs running large communication campaigns.</div>
+          <div class="price-amount">
+            <span class="currency">Rs.</span>
+            <span class="price">20,000</span>
+          </div>
+          <div class="price-meta">GST @ 18% Applicable</div>
+          <div class="price-rate">1,00,000 emails included</div>
+          <div class="price-cta">
+            <a href="https://zfrmz.com/Dcd7NHzbosgerBIiPgqF" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Buy Now <i class="fas fa-arrow-right btn-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CTA ======= -->
+  <section class="cta-final" id="contact">
+    <div class="container">
+      <div class="cta-card reveal">
+        <span class="hero-eyebrow" style="margin-bottom:14px;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff"><span class="pulse-dot"></span>Activate in minutes</span>
+        <h2>Communicate officially. Communicate beautifully.</h2>
+        <p>Get started with Mass Email today and reach every Rotarian's primary inbox — directly from your own club ID.</p>
+        <div class="cta-actions">
+          <a href="https://zfrmz.com/Dcd7NHzbosgerBIiPgqF" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Buy Now <i class="fas fa-arrow-right btn-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-contact">
+        <h3>For more information, please contact</h3>
+        <p class="lead">We're here Monday to Friday — happy to help with anything Rotary digital.</p>
+        <div class="contact-grid">
+          <a href="mailto:support@rizones4567.org" class="contact-card">
+            <span class="ic"><i class="fas fa-envelope"></i></span>
+            <div>
+              <small>Email</small>
+              <strong>support@rizones4567.org</strong>
+            </div>
+          </a>
+          <a href="tel:+918424064369" class="contact-card">
+            <span class="ic"><i class="fas fa-phone-alt"></i></span>
+            <div>
+              <small>Help line</small>
+              <strong>+91 84240 64369 / +91 89287 55144</strong>
+            </div>
+          </a>
+          <div class="contact-card">
+            <span class="ic"><i class="far fa-clock"></i></span>
+            <div>
+              <small>Office hours</small>
+              <strong>10:00 AM – 6:30 PM (Mon–Fri)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Rotary Zones 4, 5, 6 &amp; 7. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      const drawer = document.getElementById('drawer');
+      const scrim = document.getElementById('scrim');
+      const open  = () => { drawer.classList.add('open'); scrim.classList.add('show'); document.body.style.overflow='hidden'; };
+      const close = () => { drawer.classList.remove('open'); scrim.classList.remove('show'); document.body.style.overflow=''; };
+      document.getElementById('navToggle').addEventListener('click', open);
+      document.getElementById('drawerClose').addEventListener('click', close);
+      scrim.addEventListener('click', close);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    });
+
+    function cycleScenes() {
+      const scenes = document.querySelectorAll('.inbox-body .scene');
+      let i = 0;
+      setInterval(() => {
+        scenes.forEach(s => s.classList.remove('is-active'));
+        i = (i + 1) % scenes.length;
+        scenes[i].classList.add('is-active');
+      }, 4500);
+    }
+
+    window.addEventListener('load', function () {
+      cycleScenes();
+      if (!window.gsap) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('#heroH1', { y: 30, opacity: 0, duration: 1.0, ease: 'expo.out' });
+      gsap.from('#heroSub', { y: 20, opacity: 0, duration: 0.9, delay: 0.15, ease: 'expo.out' });
+      gsap.from('#heroCTA > *', { y: 14, opacity: 0, duration: 0.7, delay: 0.30, stagger: 0.08, ease: 'expo.out' });
+      gsap.from('.hero-bullets > span', { y: 10, opacity: 0, duration: 0.6, delay: 0.5, stagger: 0.06, ease: 'expo.out' });
+      gsap.from('.inbox-stage', { y: 50, opacity: 0, scale: 0.94, duration: 1.1, delay: 0.4, ease: 'expo.out' });
+
+      // Inbox rows cascade
+      gsap.from('#scene1 .gm-row', { x: -20, opacity: 0, duration: 0.5, delay: 0.7, stagger: 0.1, ease: 'expo.out' });
+
+      const animateHead = (sectionSel) => {
+        const head = document.querySelector(`${sectionSel} .section-head`);
+        if (!head) return;
+        head.classList.add('handled');
+        gsap.set(head, { opacity: 1, y: 0 });
+        const targets = head.querySelectorAll('.section-eyebrow, .section-title, .section-sub');
+        gsap.fromTo(targets,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', stagger: 0.12,
+            scrollTrigger: { trigger: head, start: 'top 85%', once: true } });
+      };
+
+      animateHead('#features');
+      gsap.utils.toArray('.feat-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 50, opacity: 0, scale: 0.97 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: 'expo.out', delay: (i % 2) * 0.1,
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+      });
+
+      animateHead('.benefits-band');
+      gsap.utils.toArray('.ben-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 50, opacity: 0, scale: 0.94 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: 'back.out(1.4)', delay: i * 0.1,
+            scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+      });
+
+      animateHead('#modules');
+      gsap.utils.toArray('.module-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 40, opacity: 0, scale: 0.96 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'back.out(1.3)', delay: i * 0.12,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+
+      animateHead('#pricing');
+      gsap.utils.toArray('.price-card').forEach((el, i) => {
+        gsap.fromTo(el,
+          { y: 60, opacity: 0, scale: 0.94 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.95, ease: 'back.out(1.3)', delay: i * 0.12,
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+
+      gsap.fromTo('.cta-card',
+        { y: 50, opacity: 0, scale: 0.96 },
+        { y: 0, opacity: 1, scale: 1, duration: 1.0, ease: 'back.out(1.2)',
+          scrollTrigger: { trigger: '.cta-card', start: 'top 85%', once: true } });
+
+      gsap.utils.toArray('.reveal').forEach(el => {
+        if (el.classList.contains('handled')) return;
+        gsap.fromTo(el,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, ease: 'expo.out',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      });
+    });
+  </script>
+</body>
+</html>

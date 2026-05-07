@@ -1,0 +1,94 @@
+<link href="css/animate.min.css?ver=1.2" rel="stylesheet" />
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand order-lg-0 order-1" href="index.html">
+   
+      <img src="img/RILOGOw.png?ver=1.1" height="50" class="d-inline-block align-text-top">
+    </a>
+    <!-- <button class="navbar-toggler order-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+<label for="toggleMenu" class="navbar-toggler fal fa-bars">
+  <input type="checkbox" id="toggleMenu">
+</label>
+    <div class="main-nav">
+      <nav class="navbar-nav navbar-right ml-auto">
+        <a class="nav-link" href="dynamic-website.html">Dynamic Website</a>
+        <a class="nav-link" href="member-due-collection.html?ver=1.9">Member Due Collection</a>
+        <a class="nav-link" href="pg-data-collection.html?ver=1.9">Payment Gateway &amp; Data Collection</a>
+        <a class="nav-link" href="mass-whatsapp.html?ver=1.9">Mass Whatsapp</a>
+        <a class="nav-link" href="mass-email.html?ver=1.9">Mass Email</a>
+      </nav>
+    </div>
+    <a href="index.html" class="btn btn-light order-2">Go Back</a>
+  </div>
+</nav>
+ 
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+$.noConflict();
+jQuery(window).load(function(){
+
+var url = window.location.href;
+var pgName = url.split('/')[3];
+
+
+ 
+
+
+jQuery('.main-nav').find('.nav-link').each(function(){
+  var href = jQuery(this).attr('href');
+  if(href == pgName){
+    jQuery('.main-nav').find('.nav-link').removeClass('active')
+    jQuery(this).addClass('active')
+  };
+
+});
+
+
+});
+
+jQuery(document).ready(function($){
+
+  
+ 
+
+  jQuery('#toggleMenu').click(function() {
+  if (jQuery(this).is(':checked')) {
+       jQuery('body').addClass('openMenu'); 
+      jQuery('.navbar-toggler ').addClass('fa-times');
+      jQuery('.navbar-toggler ').removeClass('fa-bars');
+  } else {
+     jQuery('body').removeClass('openMenu'); 
+      jQuery('.navbar-toggler ').removeClass('fa-times');
+      jQuery('.navbar-toggler ').addClass('fa-bars');
+  }
+});
+
+
+
+var mainHeader = jQuery('.navbar').height();
+var winH = jQuery(window).height();
+ 
+jQuery('.knowMore').click(function(e){
+    e.preventDefault;
+    
+    jQuery('html,body').animate({
+        scrollTop: winH - mainHeader
+    });
+    //alert(winH);
+});
+  
+ 
+
+
+
+ 
+
+AOS.init();
+
+ });
+</script>

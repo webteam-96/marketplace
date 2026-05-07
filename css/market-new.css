@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;900&display=swap');
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: 'Heebo', sans-serif;
+       background-color: #f9f9f9;
+
+}
+html {
+    height: -webkit-fill-available;
+}
+#preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.letter-spacing{
+    letter-spacing: 1.5em;
+}
+strong{
+    font-weight: 600;
+}
+.text-primary{
+    color: #005296!important;
+}
+.bg-primary{
+    background-color: #005296!important;
+}
+/*14-02-2023*/
+.font-anton{
+    font-family: 'Anton', sans-serif;letter-spacing: 1px;
+}
+.font-DM{
+    font-family: 'DM Serif Display', serif;
+   
+}
+.point-text-1{
+    color: #ddff3e;
+}
+.point-text-2{
+    color: #eeff9e;
+}
+.point-text-3{
+    color: #ffec4c;
+}
+.sub-header span{
+    font-weight: 900;;
+
+}
+/*Membership Dues*/
+ 
+.hero-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    /* top: 0; */
+}
+
+.hero-holder{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 55px;
+}
+.sub-header{
+    font-size: 2.5rem;
+    color: #fff;
+    line-height: 2.75rem;font-weight: 300;
+} 
+.arrowdown{
+    display: none;
+ width: 2em;
+ padding:1em 0; animation-name: arrowDown;
+ animation-duration: 1s;
+ position: relative; animation-iteration-count: infinite; 
+}
+@keyframes arrowDown {
+    0%   {top:0;opacity:0;} 
+    100% {top:1em;opacity:1;}
+  }
+
+ 
+
+.pay-btn{
+    position: relative;
+    width: 320px;
+    margin: auto;
+}
+.pay-btn .forBuyBtn{
+    position: absolute;
+    left: 0;
+    top: 5px; 
+    font-size: 2em;
+    color: #4caf50;
+}
+.forBuyBtn{   
+   
+   
+    animation-duration: 0.5s; 
+    animation-name: arrowLeft;    
+    animation-direction: alternate;
+    animation-iteration-count: infinite; animation-timing-function: ease-in-out;
+   }
+
+
+   @keyframes arrowLeft {
+      from { transform: translate3d(0, 0, 0);}
+        to { transform: translate3d(20px, 0, 0);}
+     }
+
+  .letsc{
+    background-color: #fffef7;
+    font-style: italic;
+  }
+
+ 
+
+.letsc h1{color: #000;}
+.letsc p{color: #005296;font-size: 1.5em;margin: 1em 0;}
+.wasted{
+    background-color: #eff4f5;
+}
+.wasted .font-DM{
+color:#dc2c1e;font-weight: 600;
+}
+.automate .font-DM span{
+color:#468200;
+}
+.benifits{
+
+}
+.benifits table tr td .fas{
+    color:#ea8a00;
+}
+.benifits table tr td .far{
+    font-size:1.25em
+}
+/*14-02-2023*/
+
+.top-header{
+     position: fixed;left: 0;
+     right: 0;
+     top: 0;
+}
+.main-content{
+    background-image: url(../images/mbg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-content .main-title{
+    color: #00f0ff;
+    letter-spacing: 1.5rem;
+}

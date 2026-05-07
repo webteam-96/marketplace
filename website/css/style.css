@@ -1,0 +1,503 @@
+﻿header {
+    background-color: #000;
+    color: #fff;
+    padding: 2.5rem;
+    background: url('../images/abstract-background-with-low-poly-design.jpg') center center/cover no-repeat fixed;
+}
+
+header:before {
+    content: '';
+    background-color: rgb(0 0 0 / 72%);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+}
+
+header,
+.container {
+    position: relative;
+}
+
+.main-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    z-index: 9;
+    /* -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); */
+}
+
+.main-header .navbar {
+    background-color: #1a1a1a;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: lighter;
+}
+
+.the_logo {
+    margin-bottom: 2rem;
+}
+
+.the_logo img {
+    width: 180px;
+
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: #ff0000;
+    /*    animation: changeColor 10s linear infinite;*/
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.hero .hero_btn {}
+
+.hero_btn a {
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: background 300ms ease;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, #ff0000, #f9530b, #ff9005, #fbd808, #fdf542);
+    background-size: 400% 400%;
+    animation: changeBackground 10s linear infinite;
+}
+
+.hero_btn1 a {
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: background 300ms ease;
+    border-radius: 2rem;
+    background: linear-gradient(86deg, #ff9005, #fdf542, #ff9005, #fbd808);
+    background-size: 400% 400%;
+    animation: changeBackground 10s linear infinite;
+}
+
+.hero_btn2 a {
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: background 300ms ease;
+    border-radius: 2rem;
+    background: linear-gradient(86deg, #fedb33, #fb6409, #fdc3b2, #fed12c);
+    background-size: 400% 400%;
+    animation: changeBackground 10s linear infinite;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    75% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*  @keyframes changeColor {
+      0% {
+       color:#ff6347;
+      }
+      25% {
+       color:#6495ed;
+      }
+      50% {
+       color: #90ee90;
+      }
+      75% {
+       color:#ffa07a;
+      }
+      100% {
+       color:#ff6347;
+      }
+    }*/
+
+.y_tube {
+    position: relative;
+
+    margin-bottom: 10px;
+
+}
+
+.y_tube iframe {
+    width: 600px;
+    height: 400px;
+    border: 0;
+    margin: 2rem 0;
+}
+
+.img_icon {
+    width: 15%;
+    max-width: auto;
+}
+
+.text_title {
+    width: 85%;
+    max-width: auto;
+}
+
+/*Info Boxex*/
+.info_boxes {
+    margin-left: 1px;
+}
+
+.info_boxes .col:nth-child(1) .info_single_box,
+.info_boxes .col:nth-child(5) .info_single_box {
+    border-left: 0;
+}
+
+.info_boxes .col:nth-child(1) .info_single_box,
+.info_boxes .col:nth-child(2) .info_single_box,
+.info_boxes .col:nth-child(3) .info_single_box,
+.info_boxes .col:nth-child(4) .info_single_box {
+    border-top: 0;
+}
+
+.info_boxes .col:nth-child(5) .info_single_box,
+.info_boxes .col:nth-child(6) .info_single_box,
+.info_boxes .col:nth-child(7) .info_single_box,
+.info_boxes .col:nth-child(8) .info_single_box {
+    border-bottom: 0;
+}
+
+.info_boxes .col:nth-child(3n + 1) .info_single_box,
+.info_boxes .col:nth-child(3n - 1) .info_single_box {
+    border-right: 0;
+}
+
+.info_boxes .info_single_box {
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px dotted #43647e;
+
+    padding: 0.5rem;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+
+.info_boxes .info_single_box .info_icon {
+
+    /* width: 50px; */
+
+    text-align: center;
+
+    font-size: 3rem;
+
+    padding: 1rem;
+
+    color: #2196F3;
+}
+
+/*Testimonial*/
+.testimonial .card {
+    magin-bottom: 0;
+    min-height: 425px;
+}
+
+.testimonial .card .card-title h5 {
+    font-weight: 600;
+    color: #2196F3;
+}
+
+.owl-carousel .owl-item .item {}
+
+.photo_circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.photo_circle img {
+    width: 100%;
+}
+
+.star_rating {
+    color: #FFC107;
+}
+
+/*Global Identity*/
+
+.global_identity h1 {
+    font-weight: 700;
+    color: #2196F3;
+}
+
+.global_identity .card {
+    height: 100%;
+}
+
+.global_identity .card .card-title h4 {
+    font-weight: 600;
+}
+
+.global_identity .card .card-title img {
+    width: 85px;
+    margin-bottom: 0.5rem;
+}
+
+.shadow_blue {
+    box-shadow: 0 6px 8px #3f51b5;
+    border: 1px solid #3f51b5 !important;
+}
+
+.shadow_orange {
+    box-shadow: 0 6px 8px #FF5722;
+    border: 1px solid #FF5722 !important;
+}
+
+.shadow_green {
+    box-shadow: 0 6px 8px #CDDC39;
+    border: 1px solid #CDDC39 !important;
+}
+
+.shadow_pink {
+    box-shadow: 0 6px 8px #ec7aff;
+    border: 1px solid #ec7aff !important;
+}
+
+.shadow_green2 {
+    box-shadow: 0 6px 8px #29c351;
+    border: 1px solid #29c351 !important;
+}
+
+.shadow_blue2 {
+    box-shadow: 0 6px 8px #00BCD4;
+    border: 1px solid #00BCD4 !important;
+}
+
+.navyblue_bg {
+    background-color: #081528;
+    color: #fff;
+}
+
+.light_bg {
+    background-color: #ebf3ff;
+}
+
+.listing_info {
+    font-size: 1.25rem;
+}
+
+.text_orange {
+    color: #FF9800;
+}
+
+.product_pics {
+    background-image: url('../images/a3mda_1200_DjxukxbTlN1200eWuKd5kCLt1916section51.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.product_pics .product_title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.product_pics .product_title h3 span {
+    color: yellow;
+}
+
+.product_pics .product_title h3 {
+    font-weight: 700;
+}
+
+.product_title h4 {
+    font-weight: 700;
+}
+
+.show_case {
+    padding: 1.25rem;
+}
+
+.show_case p {
+    font-size: 1.1rem;
+    color: #d9eeff;
+}
+
+.card_price {
+
+    position: relative;
+}
+
+.card_price h3.card-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    top: 15px;
+}
+
+.card_price .price_img {
+    height: 350px;
+    background-color: #000;
+    line-height: 350px;
+
+    background-color: #000;
+}
+
+.card_price .price_img img {}
+
+.card_price .card-body h2 {
+    font-weight: 700;
+}
+
+.glass_bg {
+    background-color: rgb(255 255 255 / 6%);
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+.sticky-button {
+    position: fixed;
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    z-index: 1000;
+    /* Make sure it appears on top of other elements */
+}
+
+.sticky-button .btn {
+    display: inline-block;
+
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.sticky-button1 {
+    position: fixed;
+    bottom: 75px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    z-index: 1000;
+    /* Make sure it appears on top of other elements */
+    margin-bottom: 10px;
+}
+
+.sticky-button1 .btn {
+    display: inline-block;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.sticky-button2 {
+    position: fixed;
+    bottom: 140px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    z-index: 1000;
+    /* Make sure it appears on top of other elements */
+    margin-bottom: 10px;
+}
+
+.sticky-button2 .btn {
+    display: inline-block;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-button2 {
+        position: fixed;
+        bottom: 165px;
+        right: 20px;
+        z-index: 1000;
+        margin-bottom: 10px;
+    }
+
+    .sticky-button1 {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        z-index: 1000;
+        margin-bottom: 10px;
+    }
+
+    .sticky-button {
+        position: fixed;
+        bottom: 33px;
+        right: 20px;
+        z-index: 1000;
+        margin-bottom: 10px;
+    }
+}
