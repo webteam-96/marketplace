@@ -2363,6 +2363,46 @@
         display: none
       }
     }
+
+    /* === RESPONSIVE PATCH v2 === */
+    @media (max-width: 1024px) {
+      .hero-grid { text-align: center; justify-items: center }
+      .hero-grid > div:first-child { display: flex; flex-direction: column; align-items: center }
+      .hero-eyebrow { align-self: center }
+      .hero p.hero-sub { margin-left: auto; margin-right: auto }
+      .hero-actions, .hero-bullets { justify-content: center }
+    }
+    @media (max-width: 768px) {
+      .problem-grid, .benefits-grid, .contact-grid { grid-template-columns: 1fr !important; gap: 14px !important }
+      .benefit-card.featured {
+        grid-column: span 1 !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 28px 22px !important;
+        text-align: center;
+      }
+      .benefit-card.featured > * { justify-self: center }
+      .benefit-card.featured .benefit-icon { margin: 0 auto }
+      .benefit-card.featured .pill-list { justify-content: center !important }
+      img { max-width: 100%; height: auto }
+      .phone-stage { overflow: visible }
+      .floating-card { display: inline-flex !important; padding: 8px 12px !important; font-size: 11px !important; gap: 8px !important; border-radius: 12px !important; max-width: 170px; background: rgba(13,27,62,.78) !important; backdrop-filter: blur(10px) }
+      .floating-card .fc-icon { width: 24px !important; height: 24px !important; font-size: 11px !important; flex-shrink: 0 }
+      .floating-card .fc-meta { line-height: 1.25 }
+      .floating-card .fc-meta small { font-size: 9.5px !important; margin-top: 1px !important; display: block }
+      .floating-card.fc-1 { top: 10px !important; left: 10px !important; bottom: auto !important; right: auto !important }
+      .floating-card.fc-2 { bottom: 10px !important; right: 10px !important; top: auto !important; left: auto !important }
+    }
+    @media (max-width: 480px) {
+      .problem-card, .benefit-card { padding: 22px 18px !important }
+      .benefit-card.featured { padding: 24px 18px !important }
+      .benefit-card.featured h4 { font-size: 18px !important }
+      .benefit-card.featured p { font-size: 14px !important }
+      .benefit-card.featured .pill { font-size: 10.5px; padding: 5px 10px }
+      .contact-card { padding: 16px 18px !important }
+      .hero-actions { flex-direction: column; align-items: stretch }
+      .hero-actions .btn { width: 100% }
+    }
   </style>
 </head>
 

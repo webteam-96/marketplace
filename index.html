@@ -1768,6 +1768,36 @@
         animation-duration: 0.01ms !important;
       }
     }
+
+    /* === RESPONSIVE PATCH v2 === */
+    @media (max-width: 768px) {
+      .stats-card { grid-template-columns: repeat(2, 1fr) !important; gap: 18px !important }
+      .stats-card .stat-item { padding: 14px 8px }
+      .cta-card { padding: 48px 26px !important }
+      .cta-card h2 { font-size: clamp(24px, 6vw, 30px) !important }
+      .cta-card::before, .cta-card::after { width: 220px !important; height: 220px !important; filter: blur(50px) !important }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 14px }
+      .btn { white-space: normal !important; text-align: center }
+      img { max-width: 100%; height: auto }
+      .floating-card { display: inline-flex !important; padding: 8px 12px !important; font-size: 11px !important; gap: 8px !important; border-radius: 12px !important; max-width: 170px; background: rgba(13,27,62,.78) !important; backdrop-filter: blur(10px) }
+      .floating-card .fc-icon { width: 24px !important; height: 24px !important; font-size: 11px !important; flex-shrink: 0 }
+      .floating-card .fc-meta { line-height: 1.25 }
+      .floating-card .fc-meta small { font-size: 9.5px !important; margin-top: 1px !important; display: block }
+      .floating-card.fc-1 { top: 10px !important; left: 10px !important; bottom: auto !important; right: auto !important }
+      .floating-card.fc-2 { bottom: 10px !important; right: 10px !important; top: auto !important; left: auto !important }
+      .floating-card.fc-3 { top: 50% !important; right: 10px !important; left: auto !important; bottom: auto !important; transform: translateY(-50%) }
+    }
+    @media (max-width: 480px) {
+      .stats-card { grid-template-columns: 1fr !important }
+      .cta-card { padding: 36px 18px !important; border-radius: 18px }
+      .cta-card::before, .cta-card::after { display: none }
+      .products-grid, .modules-grid { grid-template-columns: 1fr !important; gap: 14px }
+      .hero-actions { flex-direction: column; align-items: stretch }
+      .hero-actions .btn { width: 100% }
+      .module-card { padding: 20px 16px }
+      .footer-grid, .footer-bottom { text-align: center }
+      .contact-card { flex-direction: row; gap: 10px }
+    }
   </style>
 </head>
 

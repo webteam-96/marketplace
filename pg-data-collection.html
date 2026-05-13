@@ -428,6 +428,37 @@
       .nav-cta .btn { font-size: 11.5px; padding: 8px 10px }
       .nav-cta .btn i { display: none }
     }
+
+    /* === RESPONSIVE PATCH v2 === */
+    html, body { overflow-x: hidden !important; max-width: 100vw }
+    @media (max-width: 1024px) {
+      .prod-grid { grid-template-columns: 1fr !important; gap: 28px !important }
+      .price-pointers { grid-template-columns: repeat(2, 1fr) !important }
+    }
+    @media (max-width: 768px) {
+      .price-pointers, .contact-grid { grid-template-columns: 1fr !important; gap: 14px !important }
+      img, svg, video, iframe { max-width: 100%; height: auto }
+      .container { max-width: 100% !important }
+      .pricing-section::before, .timeline-section::before { width: 100vw !important; max-width: 100% !important }
+      .hero-blob { max-width: 60vw }
+      .form-stage { overflow: visible }
+      .browser-window { max-width: 100% }
+      .method { flex-direction: column; align-items: center; text-align: center; gap: 8px !important; padding: 16px 12px !important }
+      .method .meta small { margin-top: 4px }
+      .floating-card { display: inline-flex !important; padding: 8px 12px !important; font-size: 11px !important; gap: 8px !important; border-radius: 12px !important; max-width: 170px; background: rgba(13,27,62,.78) !important; backdrop-filter: blur(10px) }
+      .floating-card .fc-icon { width: 24px !important; height: 24px !important; font-size: 11px !important; flex-shrink: 0 }
+      .floating-card .fc-meta { line-height: 1.25 }
+      .floating-card .fc-meta small { font-size: 9.5px !important; margin-top: 1px !important; display: block }
+      .floating-card.fc-1 { top: 10px !important; left: 10px !important; bottom: auto !important; right: auto !important }
+      .floating-card.fc-2 { bottom: 10px !important; right: 10px !important; top: auto !important; left: auto !important }
+    }
+    @media (max-width: 480px) {
+      .price-card { padding: 22px 18px !important }
+      .contact-card { padding: 16px 18px !important }
+      .hero-actions { flex-direction: column; align-items: stretch }
+      .hero-actions .btn { width: 100% }
+      .price-card.featured::after { display: none }
+    }
   </style>
 </head>
 <body>
