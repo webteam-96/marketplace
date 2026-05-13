@@ -1719,6 +1719,42 @@
       }
     }
 
+    /* === MOBILE REFINEMENTS === */
+    @media (max-width: 768px) {
+      .container { padding: 0 18px }
+      .nav-inner { padding: 12px 0 }
+      .nav-logo { height: 40px }
+      .nav.scrolled .nav-logo { height: 34px }
+      .hero { padding: 110px 0 70px }
+      .hero h1 { font-size: clamp(28px, 8vw, 42px) !important; line-height: 1.1; letter-spacing: -.025em; margin: 14px 0 16px }
+      .hero p.hero-sub { font-size: 15px; line-height: 1.6 }
+      .hero-eyebrow { font-size: 11px; padding: 7px 14px }
+      .hero-actions { gap: 10px; width: 100% }
+      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px }
+      .module-card { padding: 26px 22px }
+      .module-icon { width: 50px; height: 50px; font-size: 22px }
+      .footer-contact h3 { font-size: 20px }
+      .contact-card { padding: 16px 18px }
+      footer.site-footer { padding: 50px 0 22px }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 14px }
+      .hero { padding: 100px 0 60px }
+      .hero h1 { font-size: clamp(26px, 7.8vw, 34px) !important }
+      .hero p.hero-sub { font-size: 14.5px }
+      .nav-logo { height: 36px }
+      .nav.scrolled .nav-logo { height: 30px }
+      .nav-toggle { width: 40px; height: 40px }
+      .module-card { padding: 22px 18px }
+      .module-icon { width: 46px; height: 46px; font-size: 20px }
+    }
+
+    @media (max-width: 360px) {
+      .hero h1 { font-size: 24px !important }
+      .hero p.hero-sub { font-size: 14px }
+    }
+
     @media (prefers-reduced-motion: reduce) {
 
       .wheel-svg,
@@ -2052,7 +2088,7 @@
             <span class="ic"><i class="fas fa-phone-alt"></i></span>
             <div>
               <small>Help line</small>
-              <strong>+91 84240 64369 / +91 89287 55144</strong>
+              <strong>+91 84240 64369<br>+91 89287 55144</strong>
             </div>
           </a>
           <div class="contact-card">

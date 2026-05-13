@@ -39,6 +39,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
     /* === DESIGN TOKENS (shared with index.html) === */
@@ -1172,7 +1173,7 @@
       margin-top: 22px
     }
 
-    .marquee-section:hover .marquee-row {
+    .marquee-row:has(.club-card:hover) {
       animation-play-state: paused
     }
 
@@ -2142,38 +2143,38 @@
     }
 
     .metrics-block {
-      background: var(--ink-25);
+      background: var(--white);
       border-radius: var(--r-2xl);
-      padding: 42px 36px;
+      padding: 36px 32px;
       border: 1px solid var(--ink-100)
     }
 
     .metrics-header {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 24px;
-      padding: 0 18px 18px;
-      border-bottom: 2px solid var(--ink-100);
-      margin-bottom: 8px;
-      font-size: 11px;
+      grid-template-columns: 1.4fr 1.5fr 1.5fr;
+      gap: 36px;
+      padding: 0 8px 18px;
+      border-bottom: 1px solid var(--ink-100);
+      margin-bottom: 6px;
+      font-size: 11.5px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--ink-400)
+      color: var(--ink-500)
     }
 
     .metric-row {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1.4fr 1.5fr 1.5fr;
+      gap: 36px;
       align-items: center;
-      padding: 20px 18px;
+      padding: 26px 8px;
       border-bottom: 1px solid var(--ink-100);
       transition: background var(--t-fast)
     }
 
     .metric-row:hover {
-      background: rgba(247, 168, 27, .04)
+      background: rgba(247, 168, 27, .03)
     }
 
     .metric-row:last-child {
@@ -2183,35 +2184,59 @@
     .metric-label {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--ink-900);
-      font-size: 14px;
-      letter-spacing: .04em;
-      text-transform: uppercase
+      font-size: 17px;
+      letter-spacing: -.005em;
+      line-height: 1.3
     }
 
     .metric-num-circle {
-      width: 32px;
-      height: 32px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--rotary-blue), #2D5DBA);
+      background: var(--rotary-blue-dark);
       color: var(--white);
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 13px;
+      font-weight: 700;
       flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(23, 69, 143, .25)
+      letter-spacing: 0
     }
 
-    /* Metric bar — percentage inside the colored fill at its right edge.
-       A min-width on the fill ensures narrow bars are still wide enough for the text. */
+    .metric-cell { display: flex; flex-direction: column; gap: 12px }
+
+    .metric-desc {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--ink-800);
+      line-height: 1.4
+    }
+
+    .metric-desc i {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      flex-shrink: 0
+    }
+
+    .metric-desc.bad i { background: #DC2F3C; color: #fff }
+    .metric-desc.good i { background: #2EA66B; color: #fff }
+
+    /* Metric bar — pill shape, beige track, percentage inside the colored fill at right. */
     .metric-bar {
       position: relative;
-      height: 30px;
-      background: var(--ink-100);
+      height: 34px;
+      background: #F5F1E6;
       border-radius: 100px;
       overflow: hidden;
     }
@@ -2226,10 +2251,10 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 12px;
+      padding-right: 14px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 12.5px;
+      font-weight: 700;
+      font-size: 13px;
       color: #fff;
       letter-spacing: -.01em;
       white-space: nowrap;
@@ -2237,25 +2262,15 @@
       box-sizing: border-box;
     }
 
-    .metric-bar.static .fill {
-      background: linear-gradient(90deg, #FCA5A5, #DC2626);
-    }
+    .metric-bar.static .fill { background: #E63946 }
+    .metric-bar.dynamic .fill { background: #2EA66B }
 
-    .metric-bar.dynamic .fill {
-      background: linear-gradient(90deg, #6EE7B7, #047857);
-    }
+    .metric-bar.dynamic.in-view .fill { width: var(--w) }
 
-    /* Dynamic bars: accurate percentage width — all are wide (88-96%), text fits fine. */
-    .metric-bar.dynamic.in-view .fill {
-      width: var(--w);
-    }
-
-    /* Static bars: scale 5× so tiny values (2%, 8%, 15%) look visually distinct from
-       each other, while still being wide enough to fit the percentage text inside.
-       Minimum 46px ensures even "2%" is readable; beyond that each value is proportional.
-       Result: 2%→10%, 8%→40%, 10%→50%, 12%→60%, 15%→75% — a clear visual spread. */
+    /* Static bars: progression matches reference image
+       2%→40, 8%→70, 10%→80, 12%→90, 15%→105 */
     .metric-bar.static.in-view .fill {
-      width: max(46px, calc(var(--w) * 5));
+      width: calc(30px + var(--w) * 5);
     }
 
     .insights-grid {
@@ -2435,6 +2450,145 @@
       background: rgba(255, 255, 255, .25)
     }
 
+    /* === BENEFIT SLIDER === */
+    .benefit-slider {
+      margin-top: 80px;
+      position: relative
+    }
+    .benefit-slider .swiper { border-radius: var(--r-2xl); overflow: hidden }
+    .benefit-slider .swiper-slide { height: auto }
+
+    .benefit-slide {
+      border-radius: var(--r-2xl);
+      padding: 60px 56px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px
+    }
+    .benefit-slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, .14), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(0, 0, 0, .14), transparent 55%);
+      pointer-events: none
+    }
+    .benefit-slide > * { position: relative; z-index: 1 }
+
+    .benefit-slide-eyebrow {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, .18);
+      border-radius: 100px;
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      align-self: flex-start
+    }
+
+    .benefit-slide h3 {
+      color: var(--white);
+      font-size: clamp(28px, 3.4vw, 42px);
+      line-height: 1.15;
+      margin: 18px 0 16px;
+      max-width: 760px;
+      font-weight: 700;
+      letter-spacing: -.02em
+    }
+
+    .benefit-slide p {
+      color: rgba(255, 255, 255, .92);
+      font-size: 16.5px;
+      max-width: 760px;
+      margin: 0;
+      line-height: 1.65
+    }
+
+    .benefit-slide-body { flex: 1 }
+
+    .benefit-slide-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, .22);
+      margin-top: 30px
+    }
+
+    .benefit-slide-stat { text-align: center; position: relative }
+    .benefit-slide-stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -15px;
+      top: 20%;
+      bottom: 20%;
+      width: 1px;
+      background: rgba(255, 255, 255, .22)
+    }
+    .benefit-slide-stat .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(38px, 4.5vw, 60px);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -.02em
+    }
+    .benefit-slide-stat .label {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .82)
+    }
+
+    /* Slide themes */
+    .benefit-slide.theme-gold { background: linear-gradient(135deg, #D69210 0%, #B97500 100%) }
+    .benefit-slide.theme-blue { background: linear-gradient(135deg, #1A4FA5 0%, #0D2C66 100%) }
+    .benefit-slide.theme-green { background: linear-gradient(135deg, #1F7A53 0%, #15583B 100%) }
+    .benefit-slide.theme-purple { background: linear-gradient(135deg, #6F66D6 0%, #5246B5 100%) }
+    .benefit-slide.theme-blue2 { background: linear-gradient(135deg, #1E5495 0%, #143F73 100%) }
+    .benefit-slide.theme-maroon { background: linear-gradient(135deg, #9A3554 0%, #6F2540 100%) }
+    .benefit-slide.theme-indigo { background: linear-gradient(135deg, #4F45A5 0%, #362E7E 100%) }
+
+    /* Swiper controls — arrows hidden */
+    .benefit-slider .swiper-button-prev,
+    .benefit-slider .swiper-button-next { display: none }
+    .benefit-slider .swiper-pagination {
+      position: relative;
+      margin-top: 24px;
+      bottom: auto
+    }
+    .benefit-slider .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: var(--ink-300);
+      opacity: 1;
+      transition: width var(--t-fast), background var(--t-fast)
+    }
+    .benefit-slider .swiper-pagination-bullet-active {
+      background: var(--rotary-gold);
+      width: 28px;
+      border-radius: 100px
+    }
+
+    @media (max-width:768px) {
+      .benefit-slider { margin-top: 50px }
+      .benefit-slide { padding: 40px 26px; min-height: 0 }
+      .benefit-slide h3 { font-size: clamp(22px, 6vw, 30px) }
+      .benefit-slide p { font-size: 15px }
+      .benefit-slide-stats { gap: 14px; padding-top: 22px; margin-top: 22px }
+      .benefit-slide-stat .num { font-size: clamp(28px, 7vw, 38px) }
+      .benefit-slide-stat .label { font-size: 10.5px; letter-spacing: .1em }
+      .benefit-slide-stat:not(:last-child)::after { right: -7px }
+    }
+
     /* === RESPONSIVE === */
     @media (max-width:1024px) {
       .hero-grid {
@@ -2542,7 +2696,7 @@
       }
 
       .metrics-block {
-        padding: 30px 16px
+        padding: 26px 14px
       }
 
       .metrics-header {
@@ -2551,43 +2705,27 @@
 
       .metric-row {
         grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 18px 16px
+        gap: 14px;
+        padding: 22px 4px
       }
 
-      .metric-row .metric-bar {
-        margin-top: 4px;
-      }
+      .metric-label { font-size: 15.5px }
 
-      .metric-row .metric-bar.static::before {
-        content: 'Static / No Website';
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
+      .metric-cell { gap: 8px }
+
+      .metric-cell::before {
+        font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 10.5px;
         font-weight: 700;
-        color: var(--ink-700);
+        color: var(--ink-500);
         text-transform: uppercase;
-        letter-spacing: .08em;
-        z-index: 1;
-        white-space: nowrap;
+        letter-spacing: .12em
       }
 
-      .metric-row .metric-bar.dynamic::before {
-        content: 'Dynamic Website';
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 10.5px;
-        font-weight: 700;
-        color: var(--ink-700);
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        z-index: 1;
-        white-space: nowrap;
-      }
+      .metric-row .metric-cell:nth-child(2)::before { content: 'Static / No Website' }
+      .metric-row .metric-cell:nth-child(3)::before { content: 'Dynamic Website' }
+
+      .metric-desc { font-size: 14px }
 
       .insights-grid {
         grid-template-columns: 1fr
@@ -2638,6 +2776,103 @@
         transition-duration: .01ms !important;
         animation-duration: .01ms !important
       }
+    }
+
+    /* === MOBILE REFINEMENTS === */
+    @media (max-width:768px) {
+      .container { padding: 0 18px }
+      .nav-inner { padding: 12px 0 }
+      .nav-logo { height: 40px }
+      .nav.scrolled .nav-logo { height: 34px }
+      .nav-cta .btn-primary { padding: 10px 16px; font-size: 13px }
+      .hero { padding: 110px 0 80px }
+      .hero h1 { font-size: clamp(28px, 8vw, 38px); margin: 14px 0 14px; letter-spacing: -.025em }
+      .hero p.hero-sub { font-size: 15px; margin-bottom: 22px }
+      .hero-eyebrow { font-size: 11px; padding: 7px 14px }
+      .hero-actions { gap: 10px; width: 100% }
+      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px }
+      .hero-bullets { font-size: 13px; gap: 10px 16px; margin-top: 20px }
+      .hero-mockup { max-width: 100%; perspective: none }
+      .browser-window { transform: none !important }
+      .floating-card { display: none }
+      .section-eyebrow { font-size: 11px }
+      .section-title { font-size: clamp(26px, 6.5vw, 34px) !important; letter-spacing: -.02em }
+      .section-sub { font-size: 14.5px }
+      .club-card { width: 200px; min-width: 200px }
+      .marquee-row { gap: 14px }
+      .feature-item { padding: 24px 20px }
+      .feature-grid { gap: 14px }
+      .pricing-card .price { font-size: 48px !important }
+      .pricing-card { padding: 32px 20px !important }
+      .testify-grid .testimonial { padding: 22px 18px }
+      .compare-card { padding: 22px 18px }
+      .step-card { padding: 22px 18px }
+      .insight-card { padding: 22px 18px }
+      .revenue-banner { padding: 32px 18px !important }
+      .revenue-stat-big .num { font-size: 44px !important }
+      .footer-contact h3 { font-size: 20px }
+      .contact-card { padding: 16px 18px }
+      footer.site-footer { padding: 50px 0 22px }
+
+      /* Convert sticky-side to compact horizontal bar at bottom on mobile */
+      .sticky-side {
+        display: flex !important;
+        flex-direction: row;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+        gap: 6px;
+        background: rgba(13, 27, 62, .94);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        justify-content: space-between
+      }
+      .sticky-side .ss-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: none;
+        padding: 11px 8px;
+        font-size: 11.5px;
+        gap: 6px;
+        justify-content: center;
+        white-space: nowrap;
+        border-radius: 12px
+      }
+      .sticky-side .ss-btn .ss-ic {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        flex-shrink: 0
+      }
+      .sticky-side .ss-btn .ss-label-sub { display: none }
+      body { padding-bottom: 66px }
+    }
+
+    @media (max-width:480px) {
+      .container { padding: 0 14px }
+      .hero { padding: 100px 0 70px }
+      .hero h1 { font-size: clamp(26px, 7.8vw, 32px) }
+      .hero p.hero-sub { font-size: 14.5px }
+      .hero-bullets span { font-size: 12.5px }
+      .section { padding: 60px 0 !important }
+      .nav-logo { height: 36px }
+      .nav.scrolled .nav-logo { height: 30px }
+      .nav-cta .btn-primary { padding: 9px 12px; font-size: 12.5px }
+      .nav-toggle { width: 40px; height: 40px }
+      .club-card { width: 180px; min-width: 180px }
+      .pricing-card .price { font-size: 40px !important }
+      .feature-item .feature-icon { width: 46px; height: 46px; font-size: 18px }
+      .sticky-side .ss-btn { font-size: 10.5px; padding: 10px 6px }
+      .sticky-side .ss-btn .ss-ic { width: 22px; height: 22px; font-size: 10px }
+    }
+
+    @media (max-width:360px) {
+      .hero h1 { font-size: 24px }
+      .hero p.hero-sub { font-size: 14px }
+      .nav-cta .btn-primary span,
+      .nav-cta .btn-primary { font-size: 11.5px; padding: 8px 10px }
+      .nav-cta .btn-primary i { display: none }
     }
   </style>
 </head>
@@ -2703,11 +2938,11 @@
       <div>
         <span class="hero-eyebrow"><span class="pulse-dot"></span>Rotary Zones 4, 5, 6 &amp; 7</span>
         <h1 id="heroH1">
-          Why Your Club Needs a <span class="gold">Dynamic Website</span>
+          Your Club Does Great Work. <span class="gold">The World Should Know About It.</span>
         </h1>
         <p class="hero-sub" id="heroSub">
-          1000+ Rotary Clubs across India are already using it. A beautiful, always up-to-date website for your Rotary
-          Club that also brings in advertising revenue. You focus on service — we take care of everything else.
+          A dynamic website keeps your club visible, active, and generating revenue automatically.
+          No technical skills needed. No web developer required. Just subscribe and go live.
         </p>
         <div class="hero-actions" id="heroCTA">
           <a href="#pricing" class="btn btn-primary">
@@ -2727,11 +2962,11 @@
       <div class="hero-mockup" aria-hidden="true">
         <div class="floating-card fc-1">
           <span class="fc-icon"><i class="fas fa-bolt"></i></span>
-          <span class="fc-meta">Auto-synced<small>Live updates from app</small></span>
+          <span class="fc-meta">Auto update from mobile app<small>Live updates from app</small></span>
         </div>
         <div class="floating-card fc-2">
           <span class="fc-icon"><i class="fas fa-arrow-trend-up"></i></span>
-          <span class="fc-meta">Earning ads<small>10× the cost back</small></span>
+          <span class="fc-meta">Earning through the ads<small>10× the cost back</small></span>
         </div>
         <div class="browser-window">
           <div class="browser-bar">
@@ -2787,7 +3022,7 @@
           compare against clubs that still use a static or no website.</p>
       </div>
 
-      <div class="score-cards">
+      <!-- <div class="score-cards">
         <div class="score-card-big bad reveal">
           <div class="score-num-big">18<span>/100</span></div>
           <div class="score-card-big-label">Static / No Website</div>
@@ -2796,7 +3031,7 @@
           <div class="score-num-big">94<span>/100</span></div>
           <div class="score-card-big-label">Dynamic Website Club</div>
         </div>
-      </div>
+      </div> -->
 
       <div class="metrics-block reveal" id="metricsBlock">
         <div class="metrics-header">
@@ -2806,112 +3041,253 @@
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">01</span> Online Visibility</div>
-          <div class="metric-bar static" style="--w:4%">
-            <div class="fill">10%</div>
+          <div class="metric-cell">
+            <div class="metric-bar static" style="--w:2%"><div class="fill">10%</div></div>
+            <div class="metric-desc bad"><i class="fas fa-times"></i> Club work goes unseen.</div>
           </div>
-          <div class="metric-bar dynamic" style="--w:94%">
-            <div class="fill">94%</div>
+          <div class="metric-cell">
+            <div class="metric-bar dynamic" style="--w:94%"><div class="fill">94%</div></div>
+            <div class="metric-desc good"><i class="fas fa-check"></i> Projects visible to the world.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">02</span> Member Engagement</div>
-          <div class="metric-bar static" style="--w:6%">
-            <div class="fill">15%</div>
+          <div class="metric-cell">
+            <div class="metric-bar static" style="--w:4%"><div class="fill">15%</div></div>
+            <div class="metric-desc bad"><i class="fas fa-times"></i> No central place for updates.</div>
           </div>
-          <div class="metric-bar dynamic" style="--w:91%">
-            <div class="fill">91%</div>
+          <div class="metric-cell">
+            <div class="metric-bar dynamic" style="--w:91%"><div class="fill">91%</div></div>
+            <div class="metric-desc good"><i class="fas fa-check"></i> All news in one live place.</div>
           </div>
         </div>
         <div class="metric-row">
-          <div class="metric-label"><span class="metric-num-circle">03</span> Grant &amp; Citation Eligibility</div>
-          <div class="metric-bar static" style="--w:4%">
-            <div class="fill">8%</div>
+          <div class="metric-label"><span class="metric-num-circle">03</span> Grant and Citation Eligibility</div>
+          <div class="metric-cell">
+            <div class="metric-bar static" style="--w:1.5%"><div class="fill">8%</div></div>
+            <div class="metric-desc bad"><i class="fas fa-times"></i> No website, no citation.</div>
           </div>
-          <div class="metric-bar dynamic" style="--w:96%">
-            <div class="fill">96%</div>
+          <div class="metric-cell">
+            <div class="metric-bar dynamic" style="--w:96%"><div class="fill">96%</div></div>
+            <div class="metric-desc good"><i class="fas fa-check"></i> Citation and grants unlocked.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">04</span> Revenue from Advertisements</div>
-          <div class="metric-bar static" style="--w:2%">
-            <div class="fill">2%</div>
+          <div class="metric-cell">
+            <div class="metric-bar static" style="--w:1%"><div class="fill">2%</div></div>
+            <div class="metric-desc bad"><i class="fas fa-times"></i> Zero ad income for the club.</div>
           </div>
-          <div class="metric-bar dynamic" style="--w:88%">
-            <div class="fill">88%</div>
+          <div class="metric-cell">
+            <div class="metric-bar dynamic" style="--w:88%"><div class="fill">88%</div></div>
+            <div class="metric-desc good"><i class="fas fa-check"></i> Local ads earn club revenue.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">05</span> New Member Attraction</div>
-          <div class="metric-bar static" style="--w:5%">
-            <div class="fill">12%</div>
+          <div class="metric-cell">
+            <div class="metric-bar static" style="--w:2%"><div class="fill">12%</div></div>
+            <div class="metric-desc bad"><i class="fas fa-times"></i> Club invisible to new prospects.</div>
           </div>
-          <div class="metric-bar dynamic" style="--w:89%">
-            <div class="fill">89%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="insights-grid">
-        <div class="insight-card reveal">
-          <span class="insight-num">01</span>
-          <div class="insight-row">
-            <div class="insight-bad"><i class="fas fa-times-circle"></i> Club updates lost in WhatsApp groups.</div>
-            <div class="insight-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="insight-good"><i class="fas fa-check-circle"></i> Every event and project live on your website
-              for the world to see.</div>
-          </div>
-        </div>
-        <div class="insight-card reveal">
-          <span class="insight-num">02</span>
-          <div class="insight-row">
-            <div class="insight-bad"><i class="fas fa-times-circle"></i> Ad revenue is zero. Projects need external
-              funding.</div>
-            <div class="insight-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="insight-good"><i class="fas fa-check-circle"></i> Local businesses advertise on your site.
-              Revenue flows directly to your club.</div>
-          </div>
-        </div>
-        <div class="insight-card reveal">
-          <span class="insight-num">03</span>
-          <div class="insight-row">
-            <div class="insight-bad"><i class="fas fa-times-circle"></i> No website means no citation, no grants.</div>
-            <div class="insight-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="insight-good"><i class="fas fa-check-circle"></i> Active website unlocks Presidential Citation
-              and Global Grants.</div>
-          </div>
-        </div>
-        <div class="insight-card reveal">
-          <span class="insight-num">04</span>
-          <div class="insight-row">
-            <div class="insight-bad"><i class="fas fa-times-circle"></i> Prospects cannot find your club online.</div>
-            <div class="insight-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="insight-good"><i class="fas fa-check-circle"></i> A live club page brings new members straight
-              to your door.</div>
+          <div class="metric-cell">
+            <div class="metric-bar dynamic" style="--w:89%"><div class="fill">89%</div></div>
+            <div class="metric-desc good"><i class="fas fa-check"></i> Members find and join easily.</div>
           </div>
         </div>
       </div>
 
-      <div class="revenue-banner reveal">
-        <span class="revenue-banner-eyebrow">Exclusive Benefit</span>
-        <h3>Ads on Your Website Bring In <span style="text-shadow:0 4px 24px rgba(0,0,0,.25);">10X Revenue</span> for
-          Your Club</h3>
-        <p>Your club website is not just a digital address. It is a tool that actively generates income. Local
-          businesses and sponsors can advertise on your website, and all that revenue comes directly back to your club
-          to fund your service projects.</p>
-        <div class="revenue-stats">
-          <div class="revenue-stat-big">
-            <div class="num">10X</div>
-            <div class="label">Ad Revenue Potential</div>
-          </div>
-          <div class="revenue-stat-big">
-            <div class="num">1000+</div>
-            <div class="label">Clubs Already Live</div>
-          </div>
-          <div class="revenue-stat-big">
-            <div class="num">24/7</div>
-            <div class="label">Website Always Online</div>
+      <div class="benefit-slider reveal" id="benefitSlider">
+        <div class="swiper benefit-swiper">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 0 — Exclusive Benefit (gold) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-gold">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Exclusive Benefit</span>
+                  <h3>Ads on Your Website Bring In 10X Revenue for Your Club</h3>
+                  <p>Your club website is not just a digital address. It is a tool that actively generates income. Local
+                    businesses and sponsors can advertise on your website, and all that revenue comes directly back to
+                    your club to fund your service projects.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">10X</div>
+                    <div class="label">Ad Revenue Potential</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">1000+</div>
+                    <div class="label">Clubs Already Live</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">24/7</div>
+                    <div class="label">Website Always Online</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 1 — Benefit 01 (blue) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-blue">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 01</span>
+                  <h3>Auto Update from Mobile, Anytime</h3>
+                  <p>Whatever you update on the Rizones4567 app automatically appears on your website. No extra effort
+                    at all. Your club stays current without anyone having to maintain a separate website.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">24/7</div>
+                    <div class="label">Always Updated</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">0 hrs</div>
+                    <div class="label">Manual Work Needed</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">1 App</div>
+                    <div class="label">Controls Everything</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 — Benefit 02 (green) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-green">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 02</span>
+                  <h3>Showcase Your Projects to the World</h3>
+                  <p>Your service work, events, and photos are beautifully displayed for the public, donors, and new
+                    members to see. Your club's impact is no longer hidden inside a WhatsApp group.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">100%</div>
+                    <div class="label">Projects Showcased</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Global</div>
+                    <div class="label">Audience Reached</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Live</div>
+                    <div class="label">Photo Galleries</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 — Benefit 03 (purple) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-purple">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 03</span>
+                  <h3>No Coding or Developer Needed</h3>
+                  <p>No technical background required. If you can use a mobile phone, you already have everything it
+                    takes. The Rizones4567 team sets everything up &mdash; you simply focus on your Rotary service.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">Zero</div>
+                    <div class="label">Technical Skills</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">1 Day</div>
+                    <div class="label">To Go Live</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Full</div>
+                    <div class="label">Team Support</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 — Benefit 04 (blue2) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-blue2">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 04</span>
+                  <h3>Attract New Members to Your Club</h3>
+                  <p>A professional online presence makes a strong impression on anyone looking to join a Rotary Club.
+                    When people search for a Rotary Club in your city, your website is the first thing they see.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">3x</div>
+                    <div class="label">More Inquiries</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">89%</div>
+                    <div class="label">Higher Discovery</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Always</div>
+                    <div class="label">Visible Online</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 — Benefit 05 (maroon) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-maroon">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 05</span>
+                  <h3>Mandatory for Presidential Citation and Global Grants</h3>
+                  <p>An active website is a mandatory requirement for citations, CSR eligibility, and Global Grant
+                    applications. This subscription ensures your club qualifies every single year without any extra
+                    effort.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">100%</div>
+                    <div class="label">Requirement Met</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">CSR</div>
+                    <div class="label">Eligibility Unlocked</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Global</div>
+                    <div class="label">Grants Accessible</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 — Benefit 06 (indigo) -->
+            <div class="swiper-slide">
+              <div class="benefit-slide theme-indigo">
+                <div class="benefit-slide-body">
+                  <span class="benefit-slide-eyebrow">Benefit 06</span>
+                  <h3>Your Club's Legacy, Preserved Forever</h3>
+                  <p>Every President's term, every project, and every milestone gets recorded and stays in your club's
+                    history permanently. Future members and leaders can always look back and see the legacy your club
+                    has built.</p>
+                </div>
+                <div class="benefit-slide-stats">
+                  <div class="benefit-slide-stat">
+                    <div class="num">Every</div>
+                    <div class="label">President Recorded</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">All</div>
+                    <div class="label">Projects Archived</div>
+                  </div>
+                  <div class="benefit-slide-stat">
+                    <div class="num">Forever</div>
+                    <div class="label">Searchable Online</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -2921,7 +3297,7 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="section-eyebrow">What Your Club Gets</span>
-        <h2 class="section-title">Everything your club needs. <span class="gold">Nothing complicated.</span></h2>
+        <h2 class="section-title">Everything your <span class="gold">club needs. </span></h2>
       </div>
       <div class="feature-grid">
         <div class="feature-item">
@@ -2976,389 +3352,370 @@
     <div class="marquee-mask">
       <!-- Row 1 -->
       <div class="marquee-row row-1">
-        <a class="club-card" href="http://rcthanehills.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/bluesite.png" alt="RC Thane Hills" loading="lazy"></div>
+        <a class="club-card" href="http://rcpondicherryaurocity.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/pondicherry-auro-city.png" alt="RC Pondicherry Auro City" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Thane Hills<small>rotaryindia.org</small></div><i
-              class="fas fa-arrow-up-right-from-square"></i>
+            <div class="name"> Pondicherry Auro City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/blue-1.png" alt="RC Econnect" loading="lazy"></div>
+        <a class="club-card" href="https://rcvillupuram.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/villupuram.png" alt="RC Villupuram" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Econnect<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Villupuram</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmadrasconnemara.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/yellow-1.png" alt="RC Madras Connemara" loading="lazy"></div>
+        <a class="club-card" href="https://rcgurgaoncosmopolitan.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/gurgaon-cosmopolitan.png" alt="RC Gurgaon Cosmopolitan" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Madras Connemara<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Gurgaon Cosmopolitan</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="http://rotaryclubpanaji.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/blue-2.png" alt="Rotary Club of Panaji" loading="lazy"></div>
+        <a class="club-card" href="https://rcghaziabadgreaternext.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/ghaziabad-greater-next.png" alt="RC Ghaziabad Greater Next" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Panaji<small>rotaryclubpanaji.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Ghaziabad Greater Next</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcsurendranagar.rotaryindia.org/Home2.aspx" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/yellow-2.png" alt="RC Surendranagar" loading="lazy"></div>
+        <a class="club-card" href="https://rcnidadavoleandpr.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/nidadavole-and-pr.png" alt="RC Nidadavole And. Pr." loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Surendranagar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Nidadavole And. Pr.</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckarwarpaschim.rotaryindia.org/Home.aspx" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/01.png" alt="RC Karwar Paschim" loading="lazy"></div>
+        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/khamgaon.png" alt="RC Khamgaon" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Karwar Paschim<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Khamgaon</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcpatnacitysamrat.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/02.png" alt="RC Patna City Samrat" loading="lazy"></div>
+        <a class="club-card" href="https://rcindoreadarsh.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/indore-adarsh.png" alt="RC Indore Adarsh" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Patna City Samrat<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Indore Adarsh</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcdelhimillennium.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/delhi-millennium.png" alt="RC Delhi Millennium" loading="lazy">
-          </div>
+        <a class="club-card" href="https://rcjodhpurmidtown.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/jodhpur-midtown.png" alt="RC Jodhpur Midtown" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Delhi Millennium<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Jodhpur Midtown</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcsahibabad.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/sahidabad.png" alt="RC Sahibabad" loading="lazy"></div>
+        <a class="club-card" href="https://rcahmedabadwest.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/ahmedabad-west.png" alt="RC Ahmedabad West" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Sahibabad<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Ahmedabad West</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="http://rchyderabadmavericks.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/hyderabad-mavericks.png" alt="RC Hyderabad Mavericks"
-              loading="lazy"></div>
+        <a class="club-card" href="https://rcjaipurcitizen.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/jaipur-citizen.png" alt="RC Jaipur Citizen" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Hyderabad Mavericks<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Jaipur Citizen</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbegusaraibihar.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/begusarai-bihar.png" alt="RC Begusarai Bihar" loading="lazy">
-          </div>
+        <a class="club-card" href="https://rotaryvalsad.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/valsad.png" alt="RC Valsad" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Begusarai Bihar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Valsad</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcchandigarhuptown.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/chandigarh-uptown.png" alt="RC Chandigarh Uptown" loading="lazy">
-          </div>
+        <a class="club-card" href="https://rcroparcentral.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/ropar-central.png" alt="RC Ropar Central" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Chandigarh Uptown<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Ropar Central</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmirzapurgaurav.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/mirzapur-gaurav.png" alt="RC Mirzapur Gaurav" loading="lazy">
-          </div>
+        <a class="club-card" href="http://rcmeerut.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/meerut.png" alt="RC Meerut" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Mirzapur Gaurav<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Meerut</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcallahabad.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/allahabad.png" alt="RC Allahabad" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Allahabad</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcakluj.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/akluj.png" alt="RC Akluj" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Akluj</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcmumbaimahim.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/mumbai-mahim.png" alt="RC Mumbai Mahim" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Mumbai Mahim</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <!-- DUPLICATE for seamless loop -->
-        <a class="club-card" href="http://rcthanehills.rotaryindia.org/" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/bluesite.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="http://rcpondicherryaurocity.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/pondicherry-auro-city.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Thane Hills<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Pondicherry Auro City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/blue-1.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcvillupuram.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/villupuram.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Econnect<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Villupuram</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmadrasconnemara.rotaryindia.org/" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/yellow-1.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcgurgaoncosmopolitan.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/gurgaon-cosmopolitan.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Madras Connemara<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Gurgaon Cosmopolitan</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="http://rotaryclubpanaji.org/" target="_blank" rel="noopener" aria-hidden="true">
-          <div class="thumb"><img src="images/websites/blue-2.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcghaziabadgreaternext.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/ghaziabad-greater-next.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Panaji<small>rotaryclubpanaji.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Ghaziabad Greater Next</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcsurendranagar.rotaryindia.org/Home2.aspx" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/yellow-2.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcnidadavoleandpr.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/nidadavole-and-pr.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Surendranagar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Nidadavole And. Pr.</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckarwarpaschim.rotaryindia.org/Home.aspx" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/01.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/khamgaon.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Karwar Paschim<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Khamgaon</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcpatnacitysamrat.rotaryindia.org/" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/02.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcindoreadarsh.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/indore-adarsh.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Patna City Samrat<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Indore Adarsh</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcdelhimillennium.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/delhi-millennium.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcjodhpurmidtown.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/jodhpur-midtown.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Delhi Millennium<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Jodhpur Midtown</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcsahibabad.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/sahidabad.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcahmedabadwest.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/ahmedabad-west.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Sahibabad<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Ahmedabad West</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="http://rchyderabadmavericks.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/hyderabad-mavericks.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcjaipurcitizen.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/jaipur-citizen.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Hyderabad Mavericks<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Jaipur Citizen</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbegusaraibihar.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/begusarai-bihar.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rotaryvalsad.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/valsad.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Begusarai Bihar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Valsad</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcchandigarhuptown.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/chandigarh-uptown.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcroparcentral.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/ropar-central.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Chandigarh Uptown<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Ropar Central</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmirzapurgaurav.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/mirzapur-gaurav.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="http://rcmeerut.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/meerut.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Mirzapur Gaurav<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Meerut</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcallahabad.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/allahabad.png" alt="" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Allahabad</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcakluj.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/akluj.png" alt="" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Akluj</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcmumbaimahim.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/mumbai-mahim.png" alt="" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Mumbai Mahim</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
       </div>
 
       <!-- Row 2 -->
       <div class="marquee-row row-2">
-        <a class="club-card" href="https://rchindupur.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/hindupur.png" alt="RC Hindupur" loading="lazy"></div>
+        <a class="club-card" href="https://rcthaneaces.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/thane-aces.png" alt="RC Thane Aces" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Hindupur<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Thane Aces</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcrourkelasteelcity.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/rourkela-steel-city.png" alt="RC Rourkela Steel City"
-              loading="lazy"></div>
+        <a class="club-card" href="https://rcgunturcentennial.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/guntur-centennial.png" alt="RC Guntur Centennial" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Rourkela Steel City<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Guntur Centennial</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbalasore.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/balasore.png" alt="RC Balasore" loading="lazy"></div>
+        <a class="club-card" href="http://rotaryclubpanaji.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/panaji-goa.png" alt="RC Panaji Goa" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Balasore<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Panaji Goa</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcjpn.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/mysore-jayaprakash-nagar.png" alt="RC Mysore Jayaprakash Nagar"
-              loading="lazy"></div>
+        <a class="club-card" href="https://rcmangalorecity.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/mangalore-city.png" alt="RC Mangalore City" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Mysore JP Nagar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Mangalore City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/khamgaon.png" alt="RC Khamgaon" loading="lazy"></div>
+        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/e-connect.png" alt="RC E-Connect" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Khamgaon<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> E-Connect</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcnagda.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/nagda.png" alt="RC Nagda" loading="lazy"></div>
+        <a class="club-card" href="https://rcbangalorebrigades.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/bangalore-brigades.png" alt="RC Bangalore Brigades" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Nagda<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Bangalore Brigades</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcahmedabadroyals.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/ahmedabad-royals.png" alt="RC Ahmedabad Royals" loading="lazy">
-          </div>
+        <a class="club-card" href="https://rotarynilgiriscoonoor.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/the-nilgiris.png" alt="RC The Nilgiris" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Ahmedabad Royals<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> The Nilgiris</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcchikhliriverfront.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/chikhli-river-front.png" alt="RC Chikhli River Front"
-              loading="lazy"></div>
+        <a class="club-card" href="http://rctrikarpur.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/trikarpur.png" alt="RC Trikarpur" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Chikhli River Front<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Trikarpur</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcakluj.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/akluj.png" alt="RC Akluj" loading="lazy"></div>
+        <a class="club-card" href="https://rcmavelikarakerala.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/mavelikara-kerala.png" alt="RC Mavelikara Kerala" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Akluj<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Mavelikara Kerala</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbombaymahakaliheights.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/bombay-mahakali-heights.png" alt="RC Bombay Mahakali Heights"
-              loading="lazy"></div>
+        <a class="club-card" href="https://rcchennaichola.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/chennai-chola.png" alt="RC Chennai Chola" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Bombay Mahakali Heights<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Chennai Chola</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcthaneangels.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/thane-angels.png" alt="RC Thane Angels" loading="lazy"></div>
+        <a class="club-card" href="https://rotarymadrasmagnum.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/madras-magnum.png" alt="RC Madras Magnum" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Thane Angels<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Madras Magnum</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckarwarpaschim.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/karwar-paschim.png" alt="RC Karwar Paschim" loading="lazy"></div>
+        <a class="club-card" href="https://rcdurgapurcentral.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/durgapur-central-w-bengal.png" alt="RC Durgapur Central W. Bengal" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Karwar Paschim<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Durgapur Central W. Bengal</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rccalcuttayuvis.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/calcutta-yuvis.png" alt="RC Calcutta Yuvis" loading="lazy"></div>
+        <a class="club-card" href="https://rcjdalma.rotaryindia.org" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/jamshedpur-dalma.png" alt="RC Jamshedpur Dalma" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Calcutta Yuvis<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Jamshedpur Dalma</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <!-- duplicates -->
-        <a class="club-card" href="https://rchindupur.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/hindupur.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rccr.rotaryindia.org/" target="_blank" rel="noopener">
+          <div class="thumb"><img src="images/websites/calcutta-renaissance-india.png" alt="RC Calcutta Renaissance India" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Hindupur<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Calcutta Renaissance India</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcrourkelasteelcity.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/rourkela-steel-city.png" alt="" loading="lazy"></div>
+        <!-- DUPLICATE for seamless loop -->
+        <a class="club-card" href="https://rcthaneaces.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/thane-aces.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Rourkela Steel City<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Thane Aces</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbalasore.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/balasore.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcgunturcentennial.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/guntur-centennial.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Balasore<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Guntur Centennial</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcjpn.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
-          <div class="thumb"><img src="images/websites/mysore-jayaprakash-nagar.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="http://rotaryclubpanaji.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/panaji-goa.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Mysore JP Nagar<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Panaji Goa</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/khamgaon.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcmangalorecity.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/mangalore-city.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Khamgaon<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Mangalore City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcnagda.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
-          <div class="thumb"><img src="images/websites/nagda.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/e-connect.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Nagda<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> E-Connect</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcahmedabadroyals.rotaryindia.org/" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/ahmedabad-royals.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcbangalorebrigades.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/bangalore-brigades.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Ahmedabad Royals<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Bangalore Brigades</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcchikhliriverfront.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/chikhli-river-front.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rotarynilgiriscoonoor.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/the-nilgiris.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Chikhli River Front<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> The Nilgiris</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcakluj.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
-          <div class="thumb"><img src="images/websites/akluj.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="http://rctrikarpur.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/trikarpur.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Akluj<small>rotaryindia.org</small></div><i class="fas fa-external-link-alt"></i>
+            <div class="name"> Trikarpur</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbombaymahakaliheights.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/bombay-mahakali-heights.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcmavelikarakerala.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/mavelikara-kerala.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Bombay Mahakali Heights<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Mavelikara Kerala</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcthaneangels.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/thane-angels.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcchennaichola.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/chennai-chola.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Thane Angels<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Chennai Chola</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckarwarpaschim.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/karwar-paschim.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rotarymadrasmagnum.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/madras-magnum.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Karwar Paschim<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Madras Magnum</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rccalcuttayuvis.rotaryindia.org" target="_blank" rel="noopener"
-          aria-hidden="true">
-          <div class="thumb"><img src="images/websites/calcutta-yuvis.png" alt="" loading="lazy"></div>
+        <a class="club-card" href="https://rcdurgapurcentral.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/durgapur-central-w-bengal.png" alt="" loading="lazy"></div>
           <div class="meta">
-            <div class="name">RC Calcutta Yuvis<small>rotaryindia.org</small></div><i
-              class="fas fa-external-link-alt"></i>
+            <div class="name"> Durgapur Central W. Bengal</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rcjdalma.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/jamshedpur-dalma.png" alt="" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Jamshedpur Dalma</div><i class="fas fa-external-link-alt"></i>
+          </div>
+        </a>
+        <a class="club-card" href="https://rccr.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+          <div class="thumb"><img src="images/websites/calcutta-renaissance-india.png" alt="" loading="lazy"></div>
+          <div class="meta">
+            <div class="name"> Calcutta Renaissance India</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
       </div>
@@ -3476,16 +3833,16 @@
       </div>
       <div class="rm-grid">
         <div class="rm-card reveal">
-          <div class="rm-avatar">S</div>
-          <h4>Sushmita</h4>
-          <div class="role">Relationship Manager</div>
-          <a class="contact" href="tel:+919372430855"><i class="fas fa-phone-alt"></i> +91 93724 30855</a>
-        </div>
-        <div class="rm-card reveal">
           <div class="rm-avatar">U</div>
           <h4>Usha</h4>
           <div class="role">Relationship Manager</div>
           <a class="contact" href="tel:+917021658173"><i class="fas fa-phone-alt"></i> +91 70216 58173</a>
+        </div>
+        <div class="rm-card reveal">
+          <div class="rm-avatar">S</div>
+          <h4>Sushmita</h4>
+          <div class="role">Relationship Manager</div>
+          <a class="contact" href="tel:+919372430855"><i class="fas fa-phone-alt"></i> +91 93724 30855</a>
         </div>
         <div class="rm-card reveal">
           <div class="rm-avatar"><i class="fas fa-envelope"></i></div>
@@ -3535,7 +3892,7 @@
             <span class="ic"><i class="fas fa-phone-alt"></i></span>
             <div>
               <small>Help line</small>
-              <strong>+91 84240 64369 / +91 89287 55144</strong>
+              <strong>+91 84240 64369<br>+91 89287 55144</strong>
             </div>
           </a>
           <div class="contact-card">
@@ -3556,6 +3913,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -3605,7 +3963,7 @@
 
       /* Generic safety net: animate any remaining .reveal element that
          hasn't been claimed by a section-specific handler below. */
-      const claimedClasses = ['score-card-big', 'metrics-block', 'insight-card', 'revenue-banner', 'step-card', 'testify-card', 'pricing-card', 'rm-card', 'rm-website'];
+      const claimedClasses = ['score-card-big', 'metrics-block', 'insight-card', 'benefit-slider', 'step-card', 'testify-card', 'pricing-card', 'rm-card', 'rm-website'];
       const isClaimed = el => claimedClasses.some(c => el.classList.contains(c)) || el.classList.contains('handled');
 
       /* ========= ANALYTICS — SEE THE DIFFERENCE ========= */
@@ -3643,32 +4001,23 @@
           { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', stagger: 0.10 }),
         start: 'top 88%'
       });
-      // Revenue banner: scale + count-up
-      gsap.fromTo('.revenue-banner',
+      // Benefit slider: scale-in entrance + initialise Swiper
+      gsap.fromTo('#benefitSlider',
         { y: 40, opacity: 0, scale: 0.97 },
         {
           y: 0, opacity: 1, scale: 1, duration: 1.0, ease: 'expo.out',
-          scrollTrigger: { trigger: '.revenue-banner', start: 'top 85%', once: true }
+          scrollTrigger: { trigger: '#benefitSlider', start: 'top 85%', once: true }
         });
-      ScrollTrigger.create({
-        trigger: '.revenue-banner',
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          document.querySelectorAll('.revenue-stat-big .num').forEach(el => {
-            const txt = el.textContent.trim();
-            const m = txt.match(/^(\d+)(.*)$/);
-            if (!m) return;
-            const target = parseInt(m[1], 10);
-            const suffix = m[2] || '';
-            const obj = { v: 0 };
-            gsap.to(obj, {
-              v: target, duration: 1.8, ease: 'power2.out',
-              onUpdate: () => { el.textContent = Math.floor(obj.v) + suffix; }
-            });
-          });
-        }
-      });
+      if (window.Swiper) {
+        new Swiper('.benefit-swiper', {
+          loop: true,
+          speed: 700,
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          effect: 'fade',
+          fadeEffect: { crossFade: true },
+          pagination: { el: '#benefitSlider .swiper-pagination', clickable: true }
+        });
+      }
 
       /* ========= WHAT YOUR CLUB GETS ========= */
       animateHead('#features');
