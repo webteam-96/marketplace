@@ -2207,7 +2207,11 @@
       letter-spacing: 0
     }
 
-    .metric-cell { display: flex; flex-direction: column; gap: 12px }
+    .metric-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
 
     .metric-desc {
       display: flex;
@@ -2229,8 +2233,15 @@
       flex-shrink: 0
     }
 
-    .metric-desc.bad i { background: #DC2F3C; color: #fff }
-    .metric-desc.good i { background: #2EA66B; color: #fff }
+    .metric-desc.bad i {
+      background: #DC2F3C;
+      color: #fff
+    }
+
+    .metric-desc.good i {
+      background: #2EA66B;
+      color: #fff
+    }
 
     /* Metric bar — pill shape, beige track, percentage inside the colored fill at right. */
     .metric-bar {
@@ -2262,10 +2273,17 @@
       box-sizing: border-box;
     }
 
-    .metric-bar.static .fill { background: #E63946 }
-    .metric-bar.dynamic .fill { background: #2EA66B }
+    .metric-bar.static .fill {
+      background: #E63946
+    }
 
-    .metric-bar.dynamic.in-view .fill { width: var(--w) }
+    .metric-bar.dynamic .fill {
+      background: #2EA66B
+    }
+
+    .metric-bar.dynamic.in-view .fill {
+      width: var(--w)
+    }
 
     /* Static bars: progression matches reference image
        2%→40, 8%→70, 10%→80, 12%→90, 15%→105 */
@@ -2455,8 +2473,15 @@
       margin-top: 80px;
       position: relative
     }
-    .benefit-slider .swiper { border-radius: var(--r-2xl); overflow: hidden }
-    .benefit-slider .swiper-slide { height: auto }
+
+    .benefit-slider .swiper {
+      border-radius: var(--r-2xl);
+      overflow: hidden
+    }
+
+    .benefit-slider .swiper-slide {
+      height: auto
+    }
 
     .benefit-slide {
       border-radius: var(--r-2xl);
@@ -2470,6 +2495,7 @@
       justify-content: space-between;
       gap: 30px
     }
+
     .benefit-slide::before {
       content: '';
       position: absolute;
@@ -2478,7 +2504,11 @@
         radial-gradient(circle at 80% 100%, rgba(0, 0, 0, .14), transparent 55%);
       pointer-events: none
     }
-    .benefit-slide > * { position: relative; z-index: 1 }
+
+    .benefit-slide>* {
+      position: relative;
+      z-index: 1
+    }
 
     .benefit-slide-eyebrow {
       display: inline-block;
@@ -2511,7 +2541,9 @@
       line-height: 1.65
     }
 
-    .benefit-slide-body { flex: 1 }
+    .benefit-slide-body {
+      flex: 1
+    }
 
     .benefit-slide-stats {
       display: grid;
@@ -2522,7 +2554,11 @@
       margin-top: 30px
     }
 
-    .benefit-slide-stat { text-align: center; position: relative }
+    .benefit-slide-stat {
+      text-align: center;
+      position: relative
+    }
+
     .benefit-slide-stat:not(:last-child)::after {
       content: '';
       position: absolute;
@@ -2532,6 +2568,7 @@
       width: 1px;
       background: rgba(255, 255, 255, .22)
     }
+
     .benefit-slide-stat .num {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
@@ -2540,6 +2577,7 @@
       margin-bottom: 10px;
       letter-spacing: -.02em
     }
+
     .benefit-slide-stat .label {
       font-size: 12.5px;
       font-weight: 700;
@@ -2549,22 +2587,46 @@
     }
 
     /* Slide themes */
-    .benefit-slide.theme-gold { background: linear-gradient(135deg, #D69210 0%, #B97500 100%) }
-    .benefit-slide.theme-blue { background: linear-gradient(135deg, #1A4FA5 0%, #0D2C66 100%) }
-    .benefit-slide.theme-green { background: linear-gradient(135deg, #1F7A53 0%, #15583B 100%) }
-    .benefit-slide.theme-purple { background: linear-gradient(135deg, #6F66D6 0%, #5246B5 100%) }
-    .benefit-slide.theme-blue2 { background: linear-gradient(135deg, #1E5495 0%, #143F73 100%) }
-    .benefit-slide.theme-maroon { background: linear-gradient(135deg, #9A3554 0%, #6F2540 100%) }
-    .benefit-slide.theme-indigo { background: linear-gradient(135deg, #4F45A5 0%, #362E7E 100%) }
+    .benefit-slide.theme-gold {
+      background: linear-gradient(135deg, #D69210 0%, #B97500 100%)
+    }
+
+    .benefit-slide.theme-blue {
+      background: linear-gradient(135deg, #1A4FA5 0%, #0D2C66 100%)
+    }
+
+    .benefit-slide.theme-green {
+      background: linear-gradient(135deg, #1F7A53 0%, #15583B 100%)
+    }
+
+    .benefit-slide.theme-purple {
+      background: linear-gradient(135deg, #6F66D6 0%, #5246B5 100%)
+    }
+
+    .benefit-slide.theme-blue2 {
+      background: linear-gradient(135deg, #1E5495 0%, #143F73 100%)
+    }
+
+    .benefit-slide.theme-maroon {
+      background: linear-gradient(135deg, #9A3554 0%, #6F2540 100%)
+    }
+
+    .benefit-slide.theme-indigo {
+      background: linear-gradient(135deg, #4F45A5 0%, #362E7E 100%)
+    }
 
     /* Swiper controls — arrows hidden */
     .benefit-slider .swiper-button-prev,
-    .benefit-slider .swiper-button-next { display: none }
+    .benefit-slider .swiper-button-next {
+      display: none
+    }
+
     .benefit-slider .swiper-pagination {
       position: relative;
       margin-top: 24px;
       bottom: auto
     }
+
     .benefit-slider .swiper-pagination-bullet {
       width: 10px;
       height: 10px;
@@ -2572,6 +2634,7 @@
       opacity: 1;
       transition: width var(--t-fast), background var(--t-fast)
     }
+
     .benefit-slider .swiper-pagination-bullet-active {
       background: var(--rotary-gold);
       width: 28px;
@@ -2579,14 +2642,41 @@
     }
 
     @media (max-width:768px) {
-      .benefit-slider { margin-top: 50px }
-      .benefit-slide { padding: 40px 26px; min-height: 0 }
-      .benefit-slide h3 { font-size: clamp(22px, 6vw, 30px) }
-      .benefit-slide p { font-size: 15px }
-      .benefit-slide-stats { gap: 14px; padding-top: 22px; margin-top: 22px }
-      .benefit-slide-stat .num { font-size: clamp(28px, 7vw, 38px) }
-      .benefit-slide-stat .label { font-size: 10.5px; letter-spacing: .1em }
-      .benefit-slide-stat:not(:last-child)::after { right: -7px }
+      .benefit-slider {
+        margin-top: 50px
+      }
+
+      .benefit-slide {
+        padding: 40px 26px;
+        min-height: 0
+      }
+
+      .benefit-slide h3 {
+        font-size: clamp(22px, 6vw, 30px)
+      }
+
+      .benefit-slide p {
+        font-size: 15px
+      }
+
+      .benefit-slide-stats {
+        gap: 14px;
+        padding-top: 22px;
+        margin-top: 22px
+      }
+
+      .benefit-slide-stat .num {
+        font-size: clamp(28px, 7vw, 38px)
+      }
+
+      .benefit-slide-stat .label {
+        font-size: 10.5px;
+        letter-spacing: .1em
+      }
+
+      .benefit-slide-stat:not(:last-child)::after {
+        right: -7px
+      }
     }
 
     /* === RESPONSIVE === */
@@ -2709,9 +2799,13 @@
         padding: 22px 4px
       }
 
-      .metric-label { font-size: 15.5px }
+      .metric-label {
+        font-size: 15.5px
+      }
 
-      .metric-cell { gap: 8px }
+      .metric-cell {
+        gap: 8px
+      }
 
       .metric-cell::before {
         font-family: 'Plus Jakarta Sans', sans-serif;
@@ -2722,10 +2816,17 @@
         letter-spacing: .12em
       }
 
-      .metric-row .metric-cell:nth-child(2)::before { content: 'Static / No Website' }
-      .metric-row .metric-cell:nth-child(3)::before { content: 'Dynamic Website' }
+      .metric-row .metric-cell:nth-child(2)::before {
+        content: 'Static / No Website'
+      }
 
-      .metric-desc { font-size: 14px }
+      .metric-row .metric-cell:nth-child(3)::before {
+        content: 'Dynamic Website'
+      }
+
+      .metric-desc {
+        font-size: 14px
+      }
 
       .insights-grid {
         grid-template-columns: 1fr
@@ -2780,39 +2881,151 @@
 
     /* === MOBILE REFINEMENTS === */
     @media (max-width:768px) {
-      .container { padding: 0 18px }
-      .nav-inner { padding: 12px 0 }
-      .nav-logo { height: 40px }
-      .nav.scrolled .nav-logo { height: 34px }
-      .nav-cta .btn-primary { padding: 10px 16px; font-size: 13px }
-      .hero { padding: 110px 0 80px }
-      .hero h1 { font-size: clamp(28px, 8vw, 38px); margin: 14px 0 14px; letter-spacing: -.025em }
-      .hero p.hero-sub { font-size: 15px; margin-bottom: 22px }
-      .hero-eyebrow { font-size: 11px; padding: 7px 14px }
-      .hero-actions { gap: 10px; width: 100% }
-      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px }
-      .hero-bullets { font-size: 13px; gap: 10px 16px; margin-top: 20px }
-      .hero-mockup { max-width: 100%; perspective: none }
-      .browser-window { transform: none !important }
-      .floating-card { display: none }
-      .section-eyebrow { font-size: 11px }
-      .section-title { font-size: clamp(26px, 6.5vw, 34px) !important; letter-spacing: -.02em }
-      .section-sub { font-size: 14.5px }
-      .club-card { width: 200px; min-width: 200px }
-      .marquee-row { gap: 14px }
-      .feature-item { padding: 24px 20px }
-      .feature-grid { gap: 14px }
-      .pricing-card .price { font-size: 48px !important }
-      .pricing-card { padding: 32px 20px !important }
-      .testify-grid .testimonial { padding: 22px 18px }
-      .compare-card { padding: 22px 18px }
-      .step-card { padding: 22px 18px }
-      .insight-card { padding: 22px 18px }
-      .revenue-banner { padding: 32px 18px !important }
-      .revenue-stat-big .num { font-size: 44px !important }
-      .footer-contact h3 { font-size: 20px }
-      .contact-card { padding: 16px 18px }
-      footer.site-footer { padding: 50px 0 22px }
+      .container {
+        padding: 0 18px
+      }
+
+      .nav-inner {
+        padding: 12px 0
+      }
+
+      .nav-logo {
+        height: 40px
+      }
+
+      .nav.scrolled .nav-logo {
+        height: 34px
+      }
+
+      .nav-cta .btn-primary {
+        padding: 10px 16px;
+        font-size: 13px
+      }
+
+      .hero {
+        padding: 110px 0 80px
+      }
+
+      .hero h1 {
+        font-size: clamp(28px, 8vw, 38px);
+        margin: 14px 0 14px;
+        letter-spacing: -.025em
+      }
+
+      .hero p.hero-sub {
+        font-size: 15px;
+        margin-bottom: 22px
+      }
+
+      .hero-eyebrow {
+        font-size: 11px;
+        padding: 7px 14px
+      }
+
+      .hero-actions {
+        gap: 10px;
+        width: 100%
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 14px
+      }
+
+      .hero-bullets {
+        font-size: 13px;
+        gap: 10px 16px;
+        margin-top: 20px
+      }
+
+      .hero-mockup {
+        max-width: 100%;
+        perspective: none
+      }
+
+      .browser-window {
+        transform: none !important
+      }
+
+      .floating-card {
+        display: none
+      }
+
+      .section-eyebrow {
+        font-size: 11px
+      }
+
+      .section-title {
+        font-size: clamp(26px, 6.5vw, 34px) !important;
+        letter-spacing: -.02em
+      }
+
+      .section-sub {
+        font-size: 14.5px
+      }
+
+      .club-card {
+        width: 200px;
+        min-width: 200px
+      }
+
+      .marquee-row {
+        gap: 14px
+      }
+
+      .feature-item {
+        padding: 24px 20px
+      }
+
+      .feature-grid {
+        gap: 14px
+      }
+
+      .pricing-card .price {
+        font-size: 48px !important
+      }
+
+      .pricing-card {
+        padding: 32px 20px !important
+      }
+
+      .testify-grid .testimonial {
+        padding: 22px 18px
+      }
+
+      .compare-card {
+        padding: 22px 18px
+      }
+
+      .step-card {
+        padding: 22px 18px
+      }
+
+      .insight-card {
+        padding: 22px 18px
+      }
+
+      .revenue-banner {
+        padding: 32px 18px !important
+      }
+
+      .revenue-stat-big .num {
+        font-size: 44px !important
+      }
+
+      .footer-contact h3 {
+        font-size: 20px
+      }
+
+      .contact-card {
+        padding: 16px 18px
+      }
+
+      footer.site-footer {
+        padding: 50px 0 22px
+      }
 
       /* Convert sticky-side to compact horizontal bar at bottom on mobile */
       .sticky-side {
@@ -2828,6 +3041,7 @@
         border-top: 1px solid rgba(255, 255, 255, .1);
         justify-content: space-between
       }
+
       .sticky-side .ss-btn {
         flex: 1 1 0;
         min-width: 0;
@@ -2839,75 +3053,259 @@
         white-space: nowrap;
         border-radius: 12px
       }
+
       .sticky-side .ss-btn .ss-ic {
         width: 24px;
         height: 24px;
         font-size: 11px;
         flex-shrink: 0
       }
-      .sticky-side .ss-btn .ss-label-sub { display: none }
-      body { padding-bottom: 66px }
+
+      .sticky-side .ss-btn .ss-label-sub {
+        display: none
+      }
+
+      body {
+        padding-bottom: 66px
+      }
     }
 
     @media (max-width:480px) {
-      .container { padding: 0 14px }
-      .hero { padding: 100px 0 70px }
-      .hero h1 { font-size: clamp(26px, 7.8vw, 32px) }
-      .hero p.hero-sub { font-size: 14.5px }
-      .hero-bullets span { font-size: 12.5px }
-      .section { padding: 60px 0 !important }
-      .nav-logo { height: 36px }
-      .nav.scrolled .nav-logo { height: 30px }
-      .nav-cta .btn-primary { padding: 9px 12px; font-size: 12.5px }
-      .nav-toggle { width: 40px; height: 40px }
-      .club-card { width: 180px; min-width: 180px }
-      .pricing-card .price { font-size: 40px !important }
-      .feature-item .feature-icon { width: 46px; height: 46px; font-size: 18px }
-      .sticky-side .ss-btn { font-size: 10.5px; padding: 10px 6px }
-      .sticky-side .ss-btn .ss-ic { width: 22px; height: 22px; font-size: 10px }
+      .container {
+        padding: 0 14px
+      }
+
+      .hero {
+        padding: 100px 0 70px
+      }
+
+      .hero h1 {
+        font-size: clamp(26px, 7.8vw, 32px)
+      }
+
+      .hero p.hero-sub {
+        font-size: 14.5px
+      }
+
+      .hero-bullets span {
+        font-size: 12.5px
+      }
+
+      .section {
+        padding: 60px 0 !important
+      }
+
+      .nav-logo {
+        height: 36px
+      }
+
+      .nav.scrolled .nav-logo {
+        height: 30px
+      }
+
+      .nav-cta .btn-primary {
+        padding: 9px 12px;
+        font-size: 12.5px
+      }
+
+      .nav-toggle {
+        width: 40px;
+        height: 40px
+      }
+
+      .club-card {
+        width: 180px;
+        min-width: 180px
+      }
+
+      .pricing-card .price {
+        font-size: 40px !important
+      }
+
+      .feature-item .feature-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px
+      }
+
+      .sticky-side .ss-btn {
+        font-size: 10.5px;
+        padding: 10px 6px
+      }
+
+      .sticky-side .ss-btn .ss-ic {
+        width: 22px;
+        height: 22px;
+        font-size: 10px
+      }
     }
 
     @media (max-width:360px) {
-      .hero h1 { font-size: 24px }
-      .hero p.hero-sub { font-size: 14px }
+      .hero h1 {
+        font-size: 24px
+      }
+
+      .hero p.hero-sub {
+        font-size: 14px
+      }
+
       .nav-cta .btn-primary span,
-      .nav-cta .btn-primary { font-size: 11.5px; padding: 8px 10px }
-      .nav-cta .btn-primary i { display: none }
+      .nav-cta .btn-primary {
+        font-size: 11.5px;
+        padding: 8px 10px
+      }
+
+      .nav-cta .btn-primary i {
+        display: none
+      }
     }
 
     /* === RESPONSIVE PATCH v2 === */
     @media (max-width: 1024px) {
-      .feature-grid { grid-template-columns: repeat(2, 1fr) !important }
-      .rm-grid { grid-template-columns: repeat(2, 1fr) !important }
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr) !important
+      }
+
+      .rm-grid {
+        grid-template-columns: repeat(2, 1fr) !important
+      }
     }
+
     @media (max-width: 768px) {
-      .feature-grid, .testify-grid, .rm-grid, .modules-grid { grid-template-columns: 1fr !important; gap: 16px !important }
-      .testify-card { padding: 22px !important }
-      .cta-card { padding: 48px 26px !important }
-      .cta-card h2 { font-size: clamp(24px, 6vw, 30px) !important }
-      .compare-grid { grid-template-columns: 1fr !important; gap: 18px !important }
-      .compare-divider, .compare-grid > .vs { display: none !important }
-      .benefit-slide { padding: 32px 22px !important }
-      .benefit-slide-stats { grid-template-columns: repeat(3, 1fr); gap: 12px !important }
-      .browser-window { transform: none !important }
-      img { max-width: 100%; height: auto }
-      .floating-card { display: inline-flex !important; padding: 8px 12px !important; font-size: 11px !important; gap: 8px !important; border-radius: 12px !important; max-width: 170px; background: rgba(13,27,62,.78) !important; backdrop-filter: blur(10px) }
-      .floating-card .fc-icon { width: 24px !important; height: 24px !important; font-size: 11px !important; flex-shrink: 0 }
-      .floating-card .fc-meta { line-height: 1.25 }
-      .floating-card .fc-meta small { font-size: 9.5px !important; margin-top: 1px !important; display: block }
-      .floating-card.fc-1 { top: 10px !important; left: 10px !important; bottom: auto !important; right: auto !important }
-      .floating-card.fc-2 { bottom: 10px !important; right: 10px !important; top: auto !important; left: auto !important }
+
+      .feature-grid,
+      .testify-grid,
+      .rm-grid,
+      .modules-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important
+      }
+
+      .testify-card {
+        padding: 22px !important
+      }
+
+      .cta-card {
+        padding: 48px 26px !important
+      }
+
+      .cta-card h2 {
+        font-size: clamp(24px, 6vw, 30px) !important
+      }
+
+      .compare-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important
+      }
+
+      .compare-divider,
+      .compare-grid>.vs {
+        display: none !important
+      }
+
+      .benefit-slide {
+        padding: 32px 22px !important
+      }
+
+      .benefit-slide-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px !important
+      }
+
+      .browser-window {
+        transform: none !important
+      }
+
+      img {
+        max-width: 100%;
+        height: auto
+      }
+
+      .floating-card {
+        display: inline-flex !important;
+        padding: 8px 12px !important;
+        font-size: 11px !important;
+        gap: 8px !important;
+        border-radius: 12px !important;
+        max-width: 170px;
+        background: rgba(13, 27, 62, .78) !important;
+        backdrop-filter: blur(10px)
+      }
+
+      .floating-card .fc-icon {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 11px !important;
+        flex-shrink: 0
+      }
+
+      .floating-card .fc-meta {
+        line-height: 1.25
+      }
+
+      .floating-card .fc-meta small {
+        font-size: 9.5px !important;
+        margin-top: 1px !important;
+        display: block
+      }
+
+      .floating-card.fc-1 {
+        top: 10px !important;
+        left: 10px !important;
+        bottom: auto !important;
+        right: auto !important
+      }
+
+      .floating-card.fc-2 {
+        bottom: 10px !important;
+        right: 10px !important;
+        top: auto !important;
+        left: auto !important
+      }
     }
+
     @media (max-width: 480px) {
-      .cta-card { padding: 32px 16px !important; border-radius: 18px }
-      .cta-card::before, .cta-card::after { display: none }
-      .benefit-slide { padding: 26px 18px !important }
-      .benefit-slide-stats { grid-template-columns: 1fr !important }
-      .metric-row { grid-template-columns: 1fr !important; gap: 14px !important; padding: 18px 4px !important }
-      .metric-bar { height: 28px !important }
-      .club-card { width: 160px; min-width: 160px }
-      .hero-actions { flex-direction: column; align-items: stretch }
-      .hero-actions .btn { width: 100% }
+      .cta-card {
+        padding: 32px 16px !important;
+        border-radius: 18px
+      }
+
+      .cta-card::before,
+      .cta-card::after {
+        display: none
+      }
+
+      .benefit-slide {
+        padding: 26px 18px !important
+      }
+
+      .benefit-slide-stats {
+        grid-template-columns: 1fr !important
+      }
+
+      .metric-row {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        padding: 18px 4px !important
+      }
+
+      .metric-bar {
+        height: 28px !important
+      }
+
+      .club-card {
+        width: 160px;
+        min-width: 160px
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch
+      }
+
+      .hero-actions .btn {
+        width: 100%
+      }
     }
   </style>
 </head>
@@ -2984,7 +3382,7 @@
             Click here to Subscribe! <i class="fas fa-arrow-right btn-arrow"></i>
           </a>
           <a href="#gallery" class="btn btn-secondary">
-            <i class="fas fa-eye"></i> See live website
+            <i class="fas fa-eye"></i> live websites
           </a>
         </div>
         <div class="hero-bullets">
@@ -3070,62 +3468,82 @@
 
       <div class="metrics-block reveal" id="metricsBlock">
         <div class="metrics-header">
-          <div>Metric</div>
+          <div></div>
           <div>Static / No Website</div>
           <div>Dynamic Website on Rizones4567</div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">01</span> Online Visibility</div>
           <div class="metric-cell">
-            <div class="metric-bar static" style="--w:2%"><div class="fill">10%</div></div>
+            <div class="metric-bar static" style="--w:2%">
+              <div class="fill">10%</div>
+            </div>
             <div class="metric-desc bad"><i class="fas fa-times"></i> Club work goes unseen.</div>
           </div>
           <div class="metric-cell">
-            <div class="metric-bar dynamic" style="--w:94%"><div class="fill">94%</div></div>
+            <div class="metric-bar dynamic" style="--w:94%">
+              <div class="fill">94%</div>
+            </div>
             <div class="metric-desc good"><i class="fas fa-check"></i> Projects visible to the world.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">02</span> Member Engagement</div>
           <div class="metric-cell">
-            <div class="metric-bar static" style="--w:4%"><div class="fill">15%</div></div>
+            <div class="metric-bar static" style="--w:4%">
+              <div class="fill">15%</div>
+            </div>
             <div class="metric-desc bad"><i class="fas fa-times"></i> No central place for updates.</div>
           </div>
           <div class="metric-cell">
-            <div class="metric-bar dynamic" style="--w:91%"><div class="fill">91%</div></div>
+            <div class="metric-bar dynamic" style="--w:91%">
+              <div class="fill">91%</div>
+            </div>
             <div class="metric-desc good"><i class="fas fa-check"></i> All news in one place.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">03</span> Grant and Citation Eligibility</div>
           <div class="metric-cell">
-            <div class="metric-bar static" style="--w:1.5%"><div class="fill">8%</div></div>
+            <div class="metric-bar static" style="--w:1.5%">
+              <div class="fill">8%</div>
+            </div>
             <div class="metric-desc bad"><i class="fas fa-times"></i> No website, no citation.</div>
           </div>
           <div class="metric-cell">
-            <div class="metric-bar dynamic" style="--w:96%"><div class="fill">96%</div></div>
+            <div class="metric-bar dynamic" style="--w:96%">
+              <div class="fill">96%</div>
+            </div>
             <div class="metric-desc good"><i class="fas fa-check"></i> Citation and grants unlocked.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">04</span> Revenue from Advertisements</div>
           <div class="metric-cell">
-            <div class="metric-bar static" style="--w:1%"><div class="fill">2%</div></div>
+            <div class="metric-bar static" style="--w:1%">
+              <div class="fill">2%</div>
+            </div>
             <div class="metric-desc bad"><i class="fas fa-times"></i> Zero ad income for the club.</div>
           </div>
           <div class="metric-cell">
-            <div class="metric-bar dynamic" style="--w:88%"><div class="fill">88%</div></div>
+            <div class="metric-bar dynamic" style="--w:88%">
+              <div class="fill">88%</div>
+            </div>
             <div class="metric-desc good"><i class="fas fa-check"></i> Local ads earn club revenue.</div>
           </div>
         </div>
         <div class="metric-row">
           <div class="metric-label"><span class="metric-num-circle">05</span> New Member Attraction</div>
           <div class="metric-cell">
-            <div class="metric-bar static" style="--w:2%"><div class="fill">12%</div></div>
+            <div class="metric-bar static" style="--w:2%">
+              <div class="fill">12%</div>
+            </div>
             <div class="metric-desc bad"><i class="fas fa-times"></i> Club invisible to new prospects.</div>
           </div>
           <div class="metric-cell">
-            <div class="metric-bar dynamic" style="--w:89%"><div class="fill">89%</div></div>
+            <div class="metric-bar dynamic" style="--w:89%">
+              <div class="fill">89%</div>
+            </div>
             <div class="metric-desc good"><i class="fas fa-check"></i> Members find and join easily.</div>
           </div>
         </div>
@@ -3388,7 +3806,8 @@
       <!-- Row 1 -->
       <div class="marquee-row row-1">
         <a class="club-card" href="http://rcpondicherryaurocity.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/pondicherry-auro-city.png" alt="RC Pondicherry Auro City" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/pondicherry-auro-city.png" alt="RC Pondicherry Auro City"
+              loading="lazy"></div>
           <div class="meta">
             <div class="name"> Pondicherry Auro City</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3400,19 +3819,22 @@
           </div>
         </a>
         <a class="club-card" href="https://rcgurgaoncosmopolitan.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/gurgaon-cosmopolitan.png" alt="RC Gurgaon Cosmopolitan" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/gurgaon-cosmopolitan.png" alt="RC Gurgaon Cosmopolitan"
+              loading="lazy"></div>
           <div class="meta">
             <div class="name"> Gurgaon Cosmopolitan</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <a class="club-card" href="https://rcghaziabadgreaternext.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/ghaziabad-greater-next.png" alt="RC Ghaziabad Greater Next" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/ghaziabad-greater-next.png" alt="RC Ghaziabad Greater Next"
+              loading="lazy"></div>
           <div class="meta">
             <div class="name"> Ghaziabad Greater Next</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <a class="club-card" href="https://rcnidadavoleandpr.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/nidadavole-and-pr.png" alt="RC Nidadavole And. Pr." loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/nidadavole-and-pr.png" alt="RC Nidadavole And. Pr."
+              loading="lazy"></div>
           <div class="meta">
             <div class="name"> Nidadavole And. Pr.</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3430,7 +3852,8 @@
           </div>
         </a>
         <a class="club-card" href="https://rcjodhpurmidtown.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/jodhpur-midtown.png" alt="RC Jodhpur Midtown" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/jodhpur-midtown.png" alt="RC Jodhpur Midtown" loading="lazy">
+          </div>
           <div class="meta">
             <div class="name"> Jodhpur Midtown</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3484,43 +3907,50 @@
           </div>
         </a>
         <!-- DUPLICATE for seamless loop -->
-        <a class="club-card" href="http://rcpondicherryaurocity.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="http://rcpondicherryaurocity.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/pondicherry-auro-city.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Pondicherry Auro City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcvillupuram.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcvillupuram.rotaryindia.org" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/villupuram.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Villupuram</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcgurgaoncosmopolitan.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcgurgaoncosmopolitan.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/gurgaon-cosmopolitan.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Gurgaon Cosmopolitan</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcghaziabadgreaternext.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcghaziabadgreaternext.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/ghaziabad-greater-next.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Ghaziabad Greater Next</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcnidadavoleandpr.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcnidadavoleandpr.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/nidadavole-and-pr.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Nidadavole And. Pr.</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rckhamgaon.rotaryindia.org" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/khamgaon.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Khamgaon</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcindoreadarsh.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcindoreadarsh.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/indore-adarsh.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Indore Adarsh</div><i class="fas fa-external-link-alt"></i>
@@ -3532,13 +3962,15 @@
             <div class="name"> Jodhpur Midtown</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcahmedabadwest.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcahmedabadwest.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/ahmedabad-west.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Ahmedabad West</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcjaipurcitizen.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcjaipurcitizen.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/jaipur-citizen.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Jaipur Citizen</div><i class="fas fa-external-link-alt"></i>
@@ -3550,7 +3982,8 @@
             <div class="name"> Valsad</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcroparcentral.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcroparcentral.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/ropar-central.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Ropar Central</div><i class="fas fa-external-link-alt"></i>
@@ -3562,7 +3995,8 @@
             <div class="name"> Meerut</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcallahabad.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcallahabad.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/allahabad.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Allahabad</div><i class="fas fa-external-link-alt"></i>
@@ -3574,7 +4008,8 @@
             <div class="name"> Akluj</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmumbaimahim.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcmumbaimahim.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/mumbai-mahim.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Mumbai Mahim</div><i class="fas fa-external-link-alt"></i>
@@ -3591,7 +4026,8 @@
           </div>
         </a>
         <a class="club-card" href="https://rcgunturcentennial.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/guntur-centennial.png" alt="RC Guntur Centennial" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/guntur-centennial.png" alt="RC Guntur Centennial" loading="lazy">
+          </div>
           <div class="meta">
             <div class="name"> Guntur Centennial</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3615,7 +4051,8 @@
           </div>
         </a>
         <a class="club-card" href="https://rcbangalorebrigades.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/bangalore-brigades.png" alt="RC Bangalore Brigades" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/bangalore-brigades.png" alt="RC Bangalore Brigades"
+              loading="lazy"></div>
           <div class="meta">
             <div class="name"> Bangalore Brigades</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3633,7 +4070,8 @@
           </div>
         </a>
         <a class="club-card" href="https://rcmavelikarakerala.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/mavelikara-kerala.png" alt="RC Mavelikara Kerala" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/mavelikara-kerala.png" alt="RC Mavelikara Kerala" loading="lazy">
+          </div>
           <div class="meta">
             <div class="name"> Mavelikara Kerala</div><i class="fas fa-external-link-alt"></i>
           </div>
@@ -3651,31 +4089,36 @@
           </div>
         </a>
         <a class="club-card" href="https://rcdurgapurcentral.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/durgapur-central-w-bengal.png" alt="RC Durgapur Central W. Bengal" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/durgapur-central-w-bengal.png"
+              alt="RC Durgapur Central W. Bengal" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Durgapur Central W. Bengal</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <a class="club-card" href="https://rcjdalma.rotaryindia.org" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/jamshedpur-dalma.png" alt="RC Jamshedpur Dalma" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/jamshedpur-dalma.png" alt="RC Jamshedpur Dalma" loading="lazy">
+          </div>
           <div class="meta">
             <div class="name"> Jamshedpur Dalma</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <a class="club-card" href="https://rccr.rotaryindia.org/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="images/websites/calcutta-renaissance-india.png" alt="RC Calcutta Renaissance India" loading="lazy"></div>
+          <div class="thumb"><img src="images/websites/calcutta-renaissance-india.png"
+              alt="RC Calcutta Renaissance India" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Calcutta Renaissance India</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
         <!-- DUPLICATE for seamless loop -->
-        <a class="club-card" href="https://rcthaneaces.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcthaneaces.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/thane-aces.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Thane Aces</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcgunturcentennial.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcgunturcentennial.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/guntur-centennial.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Guntur Centennial</div><i class="fas fa-external-link-alt"></i>
@@ -3687,43 +4130,50 @@
             <div class="name"> Panaji Goa</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmangalorecity.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcmangalorecity.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/mangalore-city.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Mangalore City</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rceconnect.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/e-connect.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> E-Connect</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcbangalorebrigades.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcbangalorebrigades.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/bangalore-brigades.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Bangalore Brigades</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rotarynilgiriscoonoor.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rotarynilgiriscoonoor.rotaryindia.org" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/the-nilgiris.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> The Nilgiris</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="http://rctrikarpur.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="http://rctrikarpur.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/trikarpur.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Trikarpur</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcmavelikarakerala.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcmavelikarakerala.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/mavelikara-kerala.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Mavelikara Kerala</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcchennaichola.rotaryindia.org" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcchennaichola.rotaryindia.org" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/chennai-chola.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Chennai Chola</div><i class="fas fa-external-link-alt"></i>
@@ -3735,7 +4185,8 @@
             <div class="name"> Madras Magnum</div><i class="fas fa-external-link-alt"></i>
           </div>
         </a>
-        <a class="club-card" href="https://rcdurgapurcentral.rotaryindia.org/" target="_blank" rel="noopener" aria-hidden="true">
+        <a class="club-card" href="https://rcdurgapurcentral.rotaryindia.org/" target="_blank" rel="noopener"
+          aria-hidden="true">
           <div class="thumb"><img src="images/websites/durgapur-central-w-bengal.png" alt="" loading="lazy"></div>
           <div class="meta">
             <div class="name"> Durgapur Central W. Bengal</div><i class="fas fa-external-link-alt"></i>
@@ -4044,14 +4495,34 @@
           scrollTrigger: { trigger: '#benefitSlider', start: 'top 85%', once: true }
         });
       if (window.Swiper) {
-        new Swiper('.benefit-swiper', {
+        const benefitSwiper = new Swiper('.benefit-swiper', {
           loop: true,
           speed: 700,
+          initialSlide: 0,
           autoplay: { delay: 5000, disableOnInteraction: false },
           effect: 'fade',
           fadeEffect: { crossFade: true },
           pagination: { el: '#benefitSlider .swiper-pagination', clickable: true }
         });
+        if (benefitSwiper.autoplay) benefitSwiper.autoplay.stop();
+        benefitSwiper.slideToLoop(0, 0);
+        const benefitSliderEl = document.getElementById('benefitSlider');
+        if (benefitSliderEl && 'IntersectionObserver' in window) {
+          let started = false;
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !started) {
+                started = true;
+                benefitSwiper.slideToLoop(0, 0);
+                if (benefitSwiper.autoplay) benefitSwiper.autoplay.start();
+                io.disconnect();
+              }
+            });
+          }, { threshold: 0.35 });
+          io.observe(benefitSliderEl);
+        } else if (benefitSwiper.autoplay) {
+          benefitSwiper.autoplay.start();
+        }
       }
 
       /* ========= WHAT YOUR CLUB GETS ========= */
